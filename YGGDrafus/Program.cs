@@ -16,7 +16,17 @@ namespace YGGDrafus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            GameForm mainForm = null;
+            try
+            {
+                mainForm = new GameForm();
+                Application.Run(mainForm);
+            }
+            finally
+            {
+                if (mainForm != null)
+                    mainForm.Close();
+            }
         }
     }
 }
