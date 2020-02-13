@@ -53,8 +53,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\YGGDRafus.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -81,17 +91,36 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameFormSerializable.cs" />
-    <Compile Include="GameForm.cs">
+    <Compile Include="Class\ExtendedKeyEventArgs.cs" />
+    <Compile Include="Forms\OptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameForm.Designer.cs">
+    <Compile Include="Forms\OptionForm.Designer.cs">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ConfigurableOptions.cs" />
+    <Compile Include="Forms\GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GameForm.resx">
+    <EmbeddedResource Include="Forms\GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionForm.resx">
+      <DependentUpon>OptionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -167,6 +196,87 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\craF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\craM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecaF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecaM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eniF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eniM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enuF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enuM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecaF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecaM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iopF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iopM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\osaF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\osaM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandaF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandaM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sacriF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sacriM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadiF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadiM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sramF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sramM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xelF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xelM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YGGDRafus.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
