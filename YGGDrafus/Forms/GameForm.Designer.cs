@@ -58,7 +58,7 @@
             this.gamePanel.Controls.Add(this.buttonClose);
             this.gamePanel.Controls.Add(this.pictureBoxLogo);
             this.gamePanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gamePanel.Location = new System.Drawing.Point(742, 0);
+            this.gamePanel.Location = new System.Drawing.Point(740, 0);
             this.gamePanel.Margin = new System.Windows.Forms.Padding(0);
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(50, 556);
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 556);
+            this.ClientSize = new System.Drawing.Size(790, 556);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.axShockwaveFlashGame);
             this.Cursor = System.Windows.Forms.Cursors.Default;
