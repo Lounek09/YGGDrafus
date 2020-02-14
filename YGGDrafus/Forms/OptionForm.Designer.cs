@@ -145,7 +145,7 @@
             // 
             this.nextEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.nextEditButton.Location = new System.Drawing.Point(246, 77);
+            this.nextEditButton.Location = new System.Drawing.Point(246, 47);
             this.nextEditButton.Name = "nextEditButton";
             this.nextEditButton.Size = new System.Drawing.Size(35, 22);
             this.nextEditButton.TabIndex = 11;
@@ -158,7 +158,7 @@
             // 
             this.previousEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previousEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.previousEditButton.Location = new System.Drawing.Point(246, 47);
+            this.previousEditButton.Location = new System.Drawing.Point(246, 77);
             this.previousEditButton.Name = "previousEditButton";
             this.previousEditButton.Size = new System.Drawing.Size(35, 22);
             this.previousEditButton.TabIndex = 10;
@@ -287,8 +287,8 @@
             this.Name = "OptionForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Option";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Options";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OptionForm_FormClosing);
             this.Load += new System.EventHandler(this.OptionForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OptionForm_KeyDown);
