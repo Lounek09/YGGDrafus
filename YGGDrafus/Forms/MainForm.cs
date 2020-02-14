@@ -13,7 +13,7 @@ using Tulpep.NotificationWindow;
 
 namespace YGGDrafus
 {
-    public partial class MainForm : Form, IDisposable
+    public partial class MainForm : Form
     {
         private ConfigurableOptions configurableOptions;
         private PopupNotifier popup;
@@ -148,11 +148,8 @@ namespace YGGDrafus
 
         private void OptionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OptionForm optionForm = new OptionForm
-            {
-                Owner = this
-            };
-            optionForm.Show();
+            using (OptionForm optionForm = new OptionForm {Owner = this })
+                optionForm.Show();
             optionToolStripMenuItem.Enabled = false;
         }
 

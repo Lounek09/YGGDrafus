@@ -1,4 +1,5 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using Ookii.Dialogs.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,13 +60,13 @@ namespace YGGDrafus
 
         private void PathButton_Click(object sender, EventArgs e)
         {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = @"C:\Users";
-            dialog.IsFolderPicker = true;
-            
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            using (VistaFolderBrowserDialog dialog = new VistaFolderBrowserDialog())
             {
-                pathTextBox.Text = dialog.FileName;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    pathTextBox.Text = dialog.SelectedPath;
+                    dialog.Dispose();
+                }
             }
         }
 
