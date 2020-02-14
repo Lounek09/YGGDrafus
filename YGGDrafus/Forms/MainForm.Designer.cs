@@ -54,30 +54,35 @@ namespace YGGDrafus
             this.optionToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(1008, 27);
+            this.mainMenuStrip.Size = new System.Drawing.Size(904, 29);
             this.mainMenuStrip.TabIndex = 1;
-            this.mainMenuStrip.Text = "menuStrip1";
+            this.mainMenuStrip.Text = "Menu principal";
             // 
             // newToolStripMenuItem
             // 
+            this.newToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(72, 25);
             this.newToolStripMenuItem.Text = "Nouveau";
             this.newToolStripMenuItem.ToolTipText = "Lancer une nouvelle instance du jeu";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // gameListToolStripComboBox
             // 
+            this.gameListToolStripComboBox.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameListToolStripComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gameListToolStripComboBox.Name = "gameListToolStripComboBox";
-            this.gameListToolStripComboBox.Size = new System.Drawing.Size(121, 23);
+            this.gameListToolStripComboBox.Size = new System.Drawing.Size(121, 25);
             this.gameListToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.GameListToolStripComboBox_SelectedIndexChanged);
             // 
             // upToolStripMenuItem
             // 
             this.upToolStripMenuItem.Enabled = false;
-            this.upToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.upToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.upToolStripMenuItem.Name = "upToolStripMenuItem";
-            this.upToolStripMenuItem.Size = new System.Drawing.Size(27, 23);
+            this.upToolStripMenuItem.Size = new System.Drawing.Size(26, 25);
             this.upToolStripMenuItem.Text = "￪";
             this.upToolStripMenuItem.ToolTipText = "Up";
             this.upToolStripMenuItem.Click += new System.EventHandler(this.UpToolStripMenuItem_Click);
@@ -85,9 +90,10 @@ namespace YGGDrafus
             // downToolStripMenuItem
             // 
             this.downToolStripMenuItem.Enabled = false;
-            this.downToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.downToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.downToolStripMenuItem.Name = "downToolStripMenuItem";
-            this.downToolStripMenuItem.Size = new System.Drawing.Size(27, 23);
+            this.downToolStripMenuItem.Size = new System.Drawing.Size(26, 25);
             this.downToolStripMenuItem.Text = "￬";
             this.downToolStripMenuItem.ToolTipText = "Down";
             this.downToolStripMenuItem.Click += new System.EventHandler(this.DownToolStripMenuItem_Click);
@@ -95,8 +101,10 @@ namespace YGGDrafus
             // optionToolStripMenuItem
             // 
             this.optionToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.optionToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(60, 25);
             this.optionToolStripMenuItem.Text = "Option";
             this.optionToolStripMenuItem.Click += new System.EventHandler(this.OptionToolStripMenuItem_Click);
             // 
@@ -104,18 +112,19 @@ namespace YGGDrafus
             // 
             this.mainPanel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainPanel.Location = new System.Drawing.Point(0, 704);
+            this.mainPanel.Location = new System.Drawing.Point(0, 665);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1008, 25);
+            this.mainPanel.Size = new System.Drawing.Size(904, 25);
             this.mainPanel.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(904, 690);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenuStrip);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.MainMenuStrip = this.mainMenuStrip;

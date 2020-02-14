@@ -143,8 +143,9 @@ namespace YGGDrafus
 
         private void OptionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (OptionForm optionForm = new OptionForm {Owner = this })
-                optionForm.Show();
+            OptionForm optionForm = new OptionForm { Owner = this };
+            optionForm.Show();
+
             optionToolStripMenuItem.Enabled = false;
         }
 
@@ -169,24 +170,10 @@ namespace YGGDrafus
 
             if (String.Equals(input, shortcuts["new"], StringComparison.Ordinal))
                 AddNewGame();
-            if (String.Equals(input, shortcuts["previous"], StringComparison.Ordinal))
-                Previous();
             if (String.Equals(input, shortcuts["next"], StringComparison.Ordinal))
                 Next();
-        }
-
-        public void Previous()
-        {
-            int selectedIndex = gameListToolStripComboBox.SelectedIndex;
-            int nbInstance = children.Count;
-            
-            if(nbInstance > 1)
-            {
-                if (selectedIndex != 0)
-                    gameListToolStripComboBox.SelectedIndex = selectedIndex - 1;
-                else
-                    gameListToolStripComboBox.SelectedIndex = nbInstance - 1;
-            }
+            if (String.Equals(input, shortcuts["previous"], StringComparison.Ordinal))
+                Previous();
         }
 
         private void Next()
@@ -200,6 +187,20 @@ namespace YGGDrafus
                     gameListToolStripComboBox.SelectedIndex = selectedIndex + 1;
                 else
                     gameListToolStripComboBox.SelectedIndex = 0;
+            }
+        }
+
+        public void Previous()
+        {
+            int selectedIndex = gameListToolStripComboBox.SelectedIndex;
+            int nbInstance = children.Count;
+            
+            if(nbInstance > 1)
+            {
+                if (selectedIndex != 0)
+                    gameListToolStripComboBox.SelectedIndex = selectedIndex - 1;
+                else
+                    gameListToolStripComboBox.SelectedIndex = nbInstance - 1;
             }
         }
 

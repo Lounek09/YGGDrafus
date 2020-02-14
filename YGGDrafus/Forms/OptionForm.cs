@@ -73,10 +73,10 @@ namespace YGGDrafus
 
             if (newTextBox.Enabled)
                 newTextBox.Text = input;
-            else if (previousTextBox.Enabled)
-                previousTextBox.Text = input;
             else if (nextTextBox.Enabled)
                 nextTextBox.Text = input;
+            else if (previousTextBox.Enabled)
+                previousTextBox.Text = input;
         }
 
         private void OptionForm_KeyUp(object sender, KeyEventArgs e)
@@ -93,15 +93,6 @@ namespace YGGDrafus
                 newTextBox.Enabled = true;
         }
 
-        private void PreviousEditButton_Click(object sender, EventArgs e)
-        {
-            bool doEdit = previousTextBox.Enabled;
-
-            DisabledShortcutEdit();
-            if (!doEdit)
-                previousTextBox.Enabled = true;
-        }
-
         private void NextEditButton_Click(object sender, EventArgs e)
         {
             bool doEdit = nextTextBox.Enabled;
@@ -109,6 +100,15 @@ namespace YGGDrafus
             DisabledShortcutEdit();
             if (!doEdit)
                 nextTextBox.Enabled = true;
+        }
+
+        private void PreviousEditButton_Click(object sender, EventArgs e)
+        {
+            bool doEdit = previousTextBox.Enabled;
+
+            DisabledShortcutEdit();
+            if (!doEdit)
+                previousTextBox.Enabled = true;
         }
 
         private void TabControl_TabIndexChanged(object sender, EventArgs e)
@@ -119,8 +119,8 @@ namespace YGGDrafus
         private void DisabledShortcutEdit()
         {
             newTextBox.Enabled = false;
-            previousTextBox.Enabled = false;
             nextTextBox.Enabled = false;
+            previousTextBox.Enabled = false;
         }
 
         private void DefaultButton_Click(object sender, EventArgs e)
