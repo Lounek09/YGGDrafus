@@ -49,7 +49,7 @@
             this.axShockwaveFlashGame.Margin = new System.Windows.Forms.Padding(0);
             this.axShockwaveFlashGame.Name = "axShockwaveFlashGame";
             this.axShockwaveFlashGame.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlashGame.OcxState")));
-            this.axShockwaveFlashGame.Size = new System.Drawing.Size(742, 560);
+            this.axShockwaveFlashGame.Size = new System.Drawing.Size(742, 556);
             this.axShockwaveFlashGame.TabIndex = 1;
             // 
             // gamePanel
