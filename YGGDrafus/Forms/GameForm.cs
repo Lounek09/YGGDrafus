@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -29,7 +28,6 @@ namespace YGGDrafus
             InitGame();
         }
 
-
         private void InitGame()
         {
             // Launch the game
@@ -40,24 +38,6 @@ namespace YGGDrafus
         }
 
         #endregion
-
-        private int GetIndex()
-        {
-            int index = 0;
-
-            foreach (Form child in ((MainForm)MdiParent).Children)
-            {
-                if (child.Equals(this))
-                    break;
-                index++;
-            }
-            return index;
-        }
-
-        private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            CloseGame();
-        }
 
         #region Flash Communication
 
@@ -249,6 +229,24 @@ namespace YGGDrafus
         }
 
         #endregion
+
+        private int GetIndex()
+        {
+            int index = 0;
+
+            foreach (Form child in ((MainForm)MdiParent).Children)
+            {
+                if (child.Equals(this))
+                    break;
+                index++;
+            }
+            return index;
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            CloseGame();
+        }
 
         public void CloseGame()
         {

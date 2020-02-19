@@ -12,15 +12,18 @@ namespace YGGDrafus
     {
         private readonly Dictionary<String, String> shortcuts;
         private String gamePath;
+        private bool notification;
 
         public Dictionary<String, String> Shortcuts { get => shortcuts; }
         public String GamePath { get => gamePath; set => gamePath = value; }
+        public bool Notification { get => notification; set => notification = value; }
 
         public ConfigurableOptions()
         {
             shortcuts = new Dictionary<String, String>();
             shortcuts = DefaultShorcuts();
             gamePath = "";
+            notification = true;
         }
 
         //Deserialization constructor
@@ -30,6 +33,7 @@ namespace YGGDrafus
             {
                 shortcuts = (Dictionary<String, String>)info.GetValue("shortcuts", typeof(Dictionary<String, String>));
                 gamePath = info.GetString("gamePath");
+                notification = (bool)info.GetValue("notification", typeof(bool));
             }
         }
 
@@ -39,6 +43,7 @@ namespace YGGDrafus
             {
                 info.AddValue("shortcuts", shortcuts);
                 info.AddValue("gamePath", gamePath);
+                info.AddValue("notification", notification);
             }
         }
 

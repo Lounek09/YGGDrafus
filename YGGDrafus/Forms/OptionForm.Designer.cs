@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
+            this.notificationLabel = new System.Windows.Forms.Label();
             this.pathButton = new System.Windows.Forms.Button();
             this.pathTextBox = new System.Windows.Forms.TextBox();
             this.pathLabel = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.newLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.notificationCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.shortcutTabPage.SuspendLayout();
@@ -68,6 +70,8 @@
             // generalTabPage
             // 
             this.generalTabPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.generalTabPage.Controls.Add(this.notificationCheckBox);
+            this.generalTabPage.Controls.Add(this.notificationLabel);
             this.generalTabPage.Controls.Add(this.pathButton);
             this.generalTabPage.Controls.Add(this.pathTextBox);
             this.generalTabPage.Controls.Add(this.pathLabel);
@@ -78,11 +82,22 @@
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "Général";
             // 
+            // notificationLabel
+            // 
+            this.notificationLabel.AutoSize = true;
+            this.notificationLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notificationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.notificationLabel.Location = new System.Drawing.Point(10, 80);
+            this.notificationLabel.Name = "notificationLabel";
+            this.notificationLabel.Size = new System.Drawing.Size(136, 15);
+            this.notificationLabel.TabIndex = 3;
+            this.notificationLabel.Text = "Activer les notifications :";
+            // 
             // pathButton
             // 
             this.pathButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pathButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.pathButton.Location = new System.Drawing.Point(330, 35);
+            this.pathButton.Location = new System.Drawing.Point(330, 38);
             this.pathButton.Name = "pathButton";
             this.pathButton.Size = new System.Drawing.Size(25, 22);
             this.pathButton.TabIndex = 2;
@@ -93,7 +108,7 @@
             // pathTextBox
             // 
             this.pathTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.pathTextBox.Location = new System.Drawing.Point(13, 36);
+            this.pathTextBox.Location = new System.Drawing.Point(13, 39);
             this.pathTextBox.Name = "pathTextBox";
             this.pathTextBox.Size = new System.Drawing.Size(317, 20);
             this.pathTextBox.TabIndex = 1;
@@ -103,7 +118,7 @@
             this.pathLabel.AutoSize = true;
             this.pathLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pathLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.pathLabel.Location = new System.Drawing.Point(7, 17);
+            this.pathLabel.Location = new System.Drawing.Point(10, 20);
             this.pathLabel.Name = "pathLabel";
             this.pathLabel.Size = new System.Drawing.Size(174, 15);
             this.pathLabel.TabIndex = 0;
@@ -268,6 +283,15 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // notificationCheckBox
+            // 
+            this.notificationCheckBox.AutoSize = true;
+            this.notificationCheckBox.Location = new System.Drawing.Point(152, 81);
+            this.notificationCheckBox.Name = "notificationCheckBox";
+            this.notificationCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.notificationCheckBox.TabIndex = 4;
+            this.notificationCheckBox.UseVisualStyleBackColor = true;
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.saveButton;
@@ -322,5 +346,7 @@
         private System.Windows.Forms.Button nextEditButton;
         private System.Windows.Forms.Button previousEditButton;
         private System.Windows.Forms.Button defaultButton;
+        private System.Windows.Forms.Label notificationLabel;
+        private System.Windows.Forms.CheckBox notificationCheckBox;
     }
 }

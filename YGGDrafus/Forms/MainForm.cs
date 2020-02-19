@@ -14,6 +14,7 @@ namespace YGGDrafus
 
         public ConfigurableOptions ConfigurableOption { get => configurableOptions; }
         public List<GameForm> Children { get => children; }
+
         public MainForm()
         {
             InitializeComponent();
@@ -207,7 +208,7 @@ namespace YGGDrafus
 
         public void MakeNotification(String title, String message)
         {
-            if(ActiveForm == null)
+            if(configurableOptions.Notification && ActiveForm == null)
                 ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + @"img\YGGDrafus.png");
 
         }

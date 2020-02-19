@@ -16,6 +16,7 @@ namespace YGGDrafus
         {
             pathTextBox.Text = ((MainForm)Owner).ConfigurableOption.GamePath;
             AddShorcutsValue(((MainForm)Owner).ConfigurableOption.Shortcuts);
+            notificationCheckBox.Checked = ((MainForm)Owner).ConfigurableOption.Notification;
         }
 
         private void AddShorcutsValue(Dictionary<String, String> shortcuts)
@@ -29,10 +30,11 @@ namespace YGGDrafus
         {
             ConfigurableOptions configurableOption = ((MainForm)Owner).ConfigurableOption;
 
-            configurableOption.GamePath = pathTextBox.Text;
             configurableOption.Shortcuts["new"] = newTextBox.Text;
             configurableOption.Shortcuts["previous"] = previousTextBox.Text;
             configurableOption.Shortcuts["next"] = nextTextBox.Text;
+            configurableOption.GamePath = pathTextBox.Text;
+            configurableOption.Notification = notificationCheckBox.Checked;
 
             configurableOption.Save();
 
