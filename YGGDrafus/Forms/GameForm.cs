@@ -15,7 +15,6 @@ namespace YGGDrafus
     {
         private readonly List<string> packets;
         private readonly string gamePath;
-        private bool focused;
 
         public GameForm(String gamePath)
         {
@@ -34,10 +33,10 @@ namespace YGGDrafus
         private void InitGame()
         {
             // Launch the game
-            axShockwaveFlashGame.LoadMovie(0, gamePath);
+            axShockwaveFlashGame.Movie = gamePath;
 
             // Communicate with Flash
-            axShockwaveFlashGame.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(AxShockwaveFlashGame_FlashCall);
+            axShockwaveFlashGame.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(GameAxShockwaveFlash_FlashCall);
         }
 
         #endregion
@@ -53,16 +52,6 @@ namespace YGGDrafus
                 index++;
             }
             return index;
-        }
-
-        private void GameForm_Activated(object sender, EventArgs e)
-        {
-            focused = true;
-        }
-
-        private void GameForm_Deactivate(object sender, EventArgs e)
-        {
-            focused = false;
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
@@ -92,7 +81,7 @@ namespace YGGDrafus
             return document;
         }
 
-        private void AxShockwaveFlashGame_FlashCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e)
+        private void GameAxShockwaveFlash_FlashCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e)
         {
 
             XmlDocument document = ReadFlashCall(e.request);
@@ -116,20 +105,18 @@ namespace YGGDrafus
                     case "userLog":
                         break;
                     case "debugRequest":
-                            DebugRequest(args);
+                        DebugRequest(args);
                         break;
                     case "makeNotification":
-                        //if (!focused)
-                            //MakeNotification((String)args[0]);
+                        MakeNotification((String)args[0]);
                         break;
                     case "setLoginDiscordActivity":
-                        SetLoginDiscordActivity(args);
+                        SetLoginDiscordActivity();
                         break;
                     case "setIngameDiscordActivity":
                         SetIngameDiscordActivity(args);
                         break;
                     case "changeTitle":
-                        Text = GetIndex() + " : " + (String)args[0];
                         break;
                 }
             }
@@ -161,18 +148,18 @@ namespace YGGDrafus
 
         private void MakeNotification(String message)
         {
+            message = message.Replace("\r\n","");
             if (message.Length > 100)
-            {
                 message = message.Substring(0, 100) + "...";
-            }
-            ((MainForm)MdiParent).Popup.ContentText = message;
-            ((MainForm)MdiParent).Popup.Popup();
+
+            ((MainForm)MdiParent).MakeNotification((String)((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()], message);
+
         }
 
-        private void SetLoginDiscordActivity(ArrayList args)
+        private void SetLoginDiscordActivity()
         {
 
-            pictureBoxLogo.Image = Properties.Resources.Login;
+            pictureBoxLogo.ImageLocation = @"img\login.png";
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " : Connexion";
         }
 
@@ -181,84 +168,84 @@ namespace YGGDrafus
             String playerPseudo = (String)args[2];
             int classId = Convert.ToInt16(args[5], NumberFormatInfo.InvariantInfo);
             int sexeId = Convert.ToByte(args[6], NumberFormatInfo.InvariantInfo);
-            Bitmap logo = Properties.Resources.Login;
+            String logo = @"img\login.png";
             switch(classId)
             {
                 case 1: //Feca
                     if (sexeId == 1)
-                        logo = Properties.Resources.fecaF;
+                        logo = @"img\fecaF.png";
                     else
-                        logo = Properties.Resources.fecaM;
+                        logo = @"img\fecaM.png";
                     break;
                 case 2: //Osamodas
                     if (sexeId == 1)
-                        logo = Properties.Resources.osaF;
+                        logo = @"img\osaF.png";
                     else
-                        logo = Properties.Resources.osaM;
+                        logo = @"img\osaM.png";
                     break;
                 case 3: //Enutrof
                     if (sexeId == 1)
-                        logo = Properties.Resources.enuF;
+                        logo = @"img\enuF.png";
                     else
-                        logo = Properties.Resources.enuM;
+                        logo = @"img\enuM.png";
                     break;
                 case 4: //Sram
                     if (sexeId == 1)
-                        logo = Properties.Resources.sramF;
+                        logo = @"img\sramF.png";
                     else
-                        logo = Properties.Resources.sramM;
+                        logo = @"img\sramM.png";
                     break;
                 case 5: //Xelor
                     if (sexeId == 1)
-                        logo = Properties.Resources.xelF;
+                        logo = @"img\xelF.png";
                     else
-                        logo = Properties.Resources.xelM;
+                        logo = @"img\xelM.png";
                     break;
                 case 6: //Ecaflip
                     if (sexeId == 1)
-                        logo = Properties.Resources.ecaF;
+                        logo = @"img\ecaF.png";
                     else
-                        logo = Properties.Resources.ecaM;
+                        logo = @"img\ecaM.png";
                     break;
                 case 7: //Eniripsa
                     if (sexeId == 1)
-                        logo = Properties.Resources.eniF;
+                        logo = @"img\eniF.png";
                     else
-                        logo = Properties.Resources.eniM;
+                        logo = @"img\eniM.png";
                     break;
                 case 8: //Iop
                     if (sexeId == 1)
-                        logo = Properties.Resources.iopF;
+                        logo = @"img\iopF.png";
                     else
-                        logo = Properties.Resources.iopM;
+                        logo = @"img\iopM.png";
                     break;
                 case 9: //Cra
                     if (sexeId == 1)
-                        logo = Properties.Resources.craF;
+                        logo = @"img\craF.png";
                     else
-                        logo = Properties.Resources.craM;
+                        logo = @"img\craM.png";
                     break;
                 case 10: //Sadida
                     if (sexeId == 1)
-                        logo = Properties.Resources.sadiF;
+                        logo = @"img\sadiF.png";
                     else
-                        logo = Properties.Resources.sadiM;
+                        logo = @"img\sadiM.png";
                     break;
                 case 11: //Sacrieur
                     if (sexeId == 1)
-                        logo = Properties.Resources.sacriF;
+                        logo = @"img\sacriF.png";
                     else
-                        logo = Properties.Resources.sacriM;
+                        logo = @"img\sacriM.png";
                     break;
                 case 12: //Pandawa
                     if (sexeId == 1)
-                        logo = Properties.Resources.pandaF;
+                        logo = @"img\pandaF.png";
                     else
-                        logo = Properties.Resources.pandaM;
+                        logo = @"img\pandaM.png";
                     break;
             }
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " : " + playerPseudo;
-            pictureBoxLogo.Image = logo;
+            pictureBoxLogo.ImageLocation = logo;
         }
 
         #endregion

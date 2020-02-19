@@ -19,8 +19,6 @@ namespace YGGDrafus
             {
                 if (components != null)
                     components.Dispose();
-                if (popup != null)
-                    popup.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -33,13 +31,13 @@ namespace YGGDrafus
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameListToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +52,7 @@ namespace YGGDrafus
             this.optionToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(904, 29);
+            this.mainMenuStrip.Size = new System.Drawing.Size(931, 29);
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "Menu principal";
             // 
@@ -108,23 +106,14 @@ namespace YGGDrafus
             this.optionToolStripMenuItem.Text = "Option";
             this.optionToolStripMenuItem.Click += new System.EventHandler(this.OptionToolStripMenuItem_Click);
             // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainPanel.Location = new System.Drawing.Point(0, 665);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(904, 25);
-            this.mainPanel.TabIndex = 3;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 690);
-            this.Controls.Add(this.mainPanel);
+            this.ClientSize = new System.Drawing.Size(931, 690);
             this.Controls.Add(this.mainMenuStrip);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.MainMenuStrip = this.mainMenuStrip;
@@ -144,7 +133,6 @@ namespace YGGDrafus
         private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox gameListToolStripComboBox;
-        private System.Windows.Forms.Panel mainPanel;
         private ToolStripMenuItem upToolStripMenuItem;
         private ToolStripMenuItem downToolStripMenuItem;
         private ToolStripMenuItem optionToolStripMenuItem;

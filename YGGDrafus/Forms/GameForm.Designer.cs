@@ -1,4 +1,4 @@
-﻿namespace YGGDrafus
+namespace YGGDrafus
 {
     partial class GameForm
     {

@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using Tulpep.NotificationWindow;
+using System.Diagnostics;
 
 namespace YGGDrafus
 {
     public partial class MainForm : Form
     {
         private ConfigurableOptions configurableOptions;
-        private PopupNotifier popup;
         private readonly List<GameForm> children;
 
         public ConfigurableOptions ConfigurableOption { get => configurableOptions; }
-        public PopupNotifier Popup { get => popup; }
         public List<GameForm> Children { get => children; }
         public MainForm()
         {
             InitializeComponent();
-            popup = new PopupNotifier();
             children = new List<GameForm>();
         }
 
@@ -28,9 +24,7 @@ namespace YGGDrafus
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Icon = Properties.Resources.YGGDrafus;
             InitConfigurableOptions();
-            InitDesignNotification(Properties.Resources.Dofus);
         }
 
         private void InitConfigurableOptions()
@@ -51,28 +45,6 @@ namespace YGGDrafus
                 if (stream != null)
                     stream.Close();
             }
-        }
-
-        private void InitDesignNotification(Bitmap icon)
-        {
-            popup = new PopupNotifier
-            {
-                BorderColor = Color.Black,
-                BodyColor = Color.Black,
-                ContentColor = Color.White,
-                ContentHoverColor = Color.White,
-                ContentPadding = new Padding(0, 15, 0, 20),
-                HeaderHeight = 1,
-                Image = icon,
-                ImageSize = new Size(45, 70),
-                ImagePadding = new Padding(20, 15, 40, 0)
-            };
-            popup.Click += Popup_Click;
-        }
-
-        private void Popup_Click(object sender, EventArgs e)
-        {
-            popup.Hide();
         }
 
         #endregion
@@ -231,6 +203,13 @@ namespace YGGDrafus
                     MessageBox.Show("Impossible de lancer le jeu, le fichier preloader.swf est introuvable", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        public void MakeNotification(String title, String message)
+        {
+            if(ActiveForm == null)
+                ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + @"img\YGGDrafus.png");
+
         }
     }
 }
