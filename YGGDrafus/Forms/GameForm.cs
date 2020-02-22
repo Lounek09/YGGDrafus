@@ -26,6 +26,7 @@ namespace YGGDrafus
         private void MainForm_Load(object sender, EventArgs e)
         {
             InitGame();
+            InitText();
         }
 
         private void InitGame()
@@ -35,6 +36,11 @@ namespace YGGDrafus
 
             // Communicate with Flash
             axShockwaveFlashGame.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(GameAxShockwaveFlash_FlashCall);
+        }
+
+        private void InitText()
+        {
+            indexLabel.Text = (GetIndex() + 1).ToString();
         }
 
         #endregion
@@ -140,7 +146,7 @@ namespace YGGDrafus
         {
 
             pictureBoxLogo.ImageLocation = @"img\login.png";
-            ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " : Connexion";
+            ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - Connexion";
         }
 
         private void SetIngameDiscordActivity(ArrayList args)
@@ -224,7 +230,7 @@ namespace YGGDrafus
                         logo = @"img\pandaM.png";
                     break;
             }
-            ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " : " + playerPseudo;
+            ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - " + playerPseudo;
             pictureBoxLogo.ImageLocation = logo;
         }
 

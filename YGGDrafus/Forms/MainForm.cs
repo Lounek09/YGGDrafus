@@ -127,8 +127,9 @@ namespace YGGDrafus
             for (int i = 0; i < gameListToolStripComboBox.Items.Count; i++)
             {
                 string value = (String)gameListToolStripComboBox.Items[i];
-                value = value.Split(':')[1];
-                gameListToolStripComboBox.Items[i] = (i + 1) + " :" + value;
+                value = value.Split('-')[1];
+                gameListToolStripComboBox.Items[i] = (i + 1) + " -" + value;
+                children[i].IndexLabel.Text = (i + 1).ToString();
             }
         }
 
@@ -193,7 +194,7 @@ namespace YGGDrafus
                     });
                     children[children.Count - 1].Show();
 
-                    gameListToolStripComboBox.Items.Add((gameListToolStripComboBox.Items.Count + 1) + " : Chargement");
+                    gameListToolStripComboBox.Items.Add((gameListToolStripComboBox.Items.Count + 1) + " - Chargement");
                     gameListToolStripComboBox.SelectedIndex = gameListToolStripComboBox.Items.Count - 1;
 
                     if (MdiChildren.Length > 7)

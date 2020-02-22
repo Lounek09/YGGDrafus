@@ -16,22 +16,25 @@ namespace YGGDrafus
             {
                 // create the ProcessStartInfo using "cmd" as the program to be run, and "/c " as the parameters.
                 // Incidentally, /c tells cmd that we want it to execute the command that follows, and then exit.
-                ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", "/c " + command);
-                // The following commands are needed to redirect the standard output. 
-                //This means that it will be redirected to the Process.StandardOutput StreamReader.
-                procStartInfo.RedirectStandardOutput = true;
-                procStartInfo.UseShellExecute = false;
-                // Do not create the black window.
-                procStartInfo.CreateNoWindow = true;
+                ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", "/c " + command)
+                {
+                    // The following commands are needed to redirect the standard output. 
+                    //This means that it will be redirected to the Process.StandardOutput StreamReader.
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    // Do not create the black window.
+                    CreateNoWindow = true
+                };
                 // Now we create a process, assign its ProcessStartInfo and start it
-                Process proc = new Process();
-                proc.StartInfo = procStartInfo;
+                Process proc = new Process
+                {
+                    StartInfo = procStartInfo
+                };
                 proc.Start();
             }
-            catch (Exception objException)
+            catch (Exception)
             {
                 // Log the exception
-                Console.WriteLine("ExecuteCommandSync failed" + objException.Message);
             }
         }
 
@@ -44,11 +47,13 @@ namespace YGGDrafus
             try
             {
                 //Asynchronously start the Thread to process the Execute command request.
-                Thread objThread = new Thread(new ParameterizedThreadStart(ExecuteCommandSync));
-                //Make the thread as background thread.
-                objThread.IsBackground = true;
-                //Set the Priority of the thread.
-                objThread.Priority = ThreadPriority.AboveNormal;
+                Thread objThread = new Thread(new ParameterizedThreadStart(ExecuteCommandSync))
+                {
+                    //Make the thread as background thread.
+                    IsBackground = true,
+                    //Set the Priority of the thread.
+                    Priority = ThreadPriority.AboveNormal
+                };
                 //Start the thread.
                 objThread.Start(command);
             }

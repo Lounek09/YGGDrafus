@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace YGGDrafus
 {
     partial class GameForm
@@ -34,6 +36,7 @@ namespace YGGDrafus
             this.gamePanel = new System.Windows.Forms.Panel();
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.indexLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlashGame)).BeginInit();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -55,6 +58,7 @@ namespace YGGDrafus
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.Black;
+            this.gamePanel.Controls.Add(this.indexLabel);
             this.gamePanel.Controls.Add(this.buttonClose);
             this.gamePanel.Controls.Add(this.pictureBoxLogo);
             this.gamePanel.Dock = System.Windows.Forms.DockStyle.Right;
@@ -90,6 +94,17 @@ namespace YGGDrafus
             this.pictureBoxLogo.TabIndex = 3;
             this.pictureBoxLogo.TabStop = false;
             // 
+            // indexLabel
+            // 
+            this.indexLabel.AutoSize = true;
+            this.indexLabel.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indexLabel.ForeColor = System.Drawing.Color.White;
+            this.indexLabel.Location = new System.Drawing.Point(7, 2);
+            this.indexLabel.Name = "IndexLabel";
+            this.indexLabel.Size = new System.Drawing.Size(16, 20);
+            this.indexLabel.TabIndex = 5;
+            this.indexLabel.Text = "?";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +120,7 @@ namespace YGGDrafus
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlashGame)).EndInit();
             this.gamePanel.ResumeLayout(false);
+            this.gamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -116,6 +132,9 @@ namespace YGGDrafus
         private System.Windows.Forms.Panel gamePanel;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label indexLabel;
+
+        public Label IndexLabel { get => indexLabel; }
     }
 }
 
