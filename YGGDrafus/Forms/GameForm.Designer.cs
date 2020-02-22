@@ -1,5 +1,3 @@
-using System.Windows.Forms;
-
 namespace YGGDrafus
 {
     partial class GameForm
@@ -134,7 +132,7 @@ namespace YGGDrafus
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label indexLabel;
 
-        public Label IndexLabel { get => indexLabel; }
+        public System.Windows.Forms.Label IndexLabel { get => indexLabel; }
     }
 }
 

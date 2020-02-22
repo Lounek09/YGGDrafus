@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace YGGDrafus
+﻿namespace YGGDrafus
 {
     partial class MainForm
     {
@@ -133,12 +131,12 @@ namespace YGGDrafus
         private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox gameListToolStripComboBox;
-        private ToolStripMenuItem upToolStripMenuItem;
-        private ToolStripMenuItem downToolStripMenuItem;
-        private ToolStripMenuItem optionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem upToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem downToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
 
-        public ToolStripMenuItem NewToolStripMenuItem { get => this.newToolStripMenuItem; }
-        public ToolStripComboBox GameListToolStripComboBox { get => gameListToolStripComboBox; }
-        public ToolStripMenuItem OptionToolStripMenuItem { get => optionToolStripMenuItem; }
+        public System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem { get => this.newToolStripMenuItem; }
+        public System.Windows.Forms.ToolStripComboBox GameListToolStripComboBox { get => gameListToolStripComboBox; }
+        public System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem { get => optionToolStripMenuItem; }
     }
 }
