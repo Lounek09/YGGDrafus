@@ -94,7 +94,8 @@ namespace YGGDrafus
                         DebugRequest(args);
                         break;
                     case "makeNotification":
-                        MakeNotification((String)args[0]);
+                        if (((MainForm)MdiParent).ConfigurableOptions.Notification && ActiveForm == null)
+                            MakeNotification((String)args[0]);
                         break;
                     case "setLoginDiscordActivity":
                         SetLoginDiscordActivity();

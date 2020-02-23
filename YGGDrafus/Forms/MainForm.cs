@@ -14,7 +14,7 @@ namespace YGGDrafus
         private ConfigurableOptions configurableOptions;
         private readonly List<GameForm> children;
 
-        public ConfigurableOptions ConfigurableOption { get => configurableOptions; }
+        public ConfigurableOptions ConfigurableOptions { get => configurableOptions; }
         public List<GameForm> Children { get => children; }
 
         public MainForm()
@@ -198,6 +198,8 @@ namespace YGGDrafus
                     }
                     bitmap.Save(@"screenshot\dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png); ;
                 }
+
+                MakeNotification("YGGDrafus", "Vous avez pris un screenshot !");
             }
         }
 
@@ -232,8 +234,7 @@ namespace YGGDrafus
 
         public void MakeNotification(String title, String message)
         {
-            if(configurableOptions.Notification && ActiveForm == null)
-                ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + @"img\YGGDrafus.png");
+            ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + @"img\YGGDrafus.png");
 
         }
     }
