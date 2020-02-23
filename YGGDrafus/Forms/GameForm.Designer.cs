@@ -30,28 +30,28 @@ namespace YGGDrafus
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
-            this.axShockwaveFlashGame = new AxShockwaveFlashObjects.AxShockwaveFlash();
+            this.gameAxShockwaveFlash = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.gamePanel = new System.Windows.Forms.Panel();
             this.indexLabel = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlashGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameAxShockwaveFlash)).BeginInit();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // axShockwaveFlashGame
+            // gameAxShockwaveFlash
             // 
-            this.axShockwaveFlashGame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gameAxShockwaveFlash.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.axShockwaveFlashGame.Enabled = true;
-            this.axShockwaveFlashGame.Location = new System.Drawing.Point(0, 0);
-            this.axShockwaveFlashGame.Margin = new System.Windows.Forms.Padding(0);
-            this.axShockwaveFlashGame.Name = "axShockwaveFlashGame";
-            this.axShockwaveFlashGame.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlashGame.OcxState")));
-            this.axShockwaveFlashGame.Size = new System.Drawing.Size(742, 556);
-            this.axShockwaveFlashGame.TabIndex = 1;
+            this.gameAxShockwaveFlash.Enabled = true;
+            this.gameAxShockwaveFlash.Location = new System.Drawing.Point(0, 0);
+            this.gameAxShockwaveFlash.Margin = new System.Windows.Forms.Padding(0);
+            this.gameAxShockwaveFlash.Name = "gameAxShockwaveFlash";
+            this.gameAxShockwaveFlash.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("gameAxShockwaveFlash.OcxState")));
+            this.gameAxShockwaveFlash.Size = new System.Drawing.Size(742, 556);
+            this.gameAxShockwaveFlash.TabIndex = 1;
             // 
             // gamePanel
             // 
@@ -109,14 +109,14 @@ namespace YGGDrafus
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 556);
             this.Controls.Add(this.gamePanel);
-            this.Controls.Add(this.axShockwaveFlashGame);
+            this.Controls.Add(this.gameAxShockwaveFlash);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GameForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "YGGDrafus";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlashGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameAxShockwaveFlash)).EndInit();
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -126,14 +126,15 @@ namespace YGGDrafus
 
         #endregion
 
-        private AxShockwaveFlashObjects.AxShockwaveFlash axShockwaveFlashGame;
+        private AxShockwaveFlashObjects.AxShockwaveFlash gameAxShockwaveFlash;
         private System.Windows.Forms.Panel gamePanel;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label indexLabel;
 
-        public System.Windows.Forms.Label IndexLabel { get => indexLabel; }
+        public AxShockwaveFlashObjects.AxShockwaveFlash GameAxShockwaveFlash { get => gameAxShockwaveFlash; }
         public System.Windows.Forms.Panel GamePanel { get => gamePanel; }
+        public System.Windows.Forms.Label IndexLabel { get => indexLabel; }
     }
 }
 

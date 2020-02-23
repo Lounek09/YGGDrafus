@@ -32,10 +32,10 @@ namespace YGGDrafus
         private void InitGame()
         {
             // Launch the game
-            axShockwaveFlashGame.Movie = gamePath;
+            gameAxShockwaveFlash.Movie = gamePath;
 
             // Communicate with Flash
-            axShockwaveFlashGame.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(GameAxShockwaveFlash_FlashCall);
+            gameAxShockwaveFlash.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(GameAxShockwaveFlash_FlashCall);
         }
 
         private void InitText()

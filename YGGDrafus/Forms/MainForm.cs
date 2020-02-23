@@ -1,9 +1,9 @@
-﻿using System;
+﻿using AxShockwaveFlashObjects;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -150,7 +150,7 @@ namespace YGGDrafus
                 Next();
             if (String.Equals(input, shortcuts["previous"], StringComparison.Ordinal))
                 Previous();
-            if (String.Equals(input, shortcuts["screenshot"], StringComparison.Ordinal) && gameListToolStripComboBox.Items.Count != 0)
+            if (String.Equals(input, shortcuts["screenshot"], StringComparison.Ordinal))
                 TakeScreenShot();
         }
 
@@ -184,15 +184,20 @@ namespace YGGDrafus
 
         private void TakeScreenShot()
         {
-            Rectangle bounds = Bounds;
-            using (Bitmap bitmap = new Bitmap(bounds.Width - 22 - children[gameListToolStripComboBox.SelectedIndex].GamePanel.Width, bounds.Height - mainMenuStrip.Height - 44))
+            if (gameListToolStripComboBox.Items.Count != 0)
             {
-                using (Graphics g = Graphics.FromImage(bitmap))
-                {
-                    g.CopyFromScreen(new Point(bounds.Left + 12, bounds.Top + mainMenuStrip.Height + 34), Point.Empty, bounds.Size);
+                AxShockwaveFlash game = children[gameListToolStripComboBox.SelectedIndex].GameAxShockwaveFlash;
 
+                Rectangle bounds = game.RectangleToScreen(game.Bounds);
+                using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+                {
+                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    {
+                        graphics.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size, CopyPixelOperation.SourceCopy);
+
+                    }
+                    bitmap.Save(@"screenshot\dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png); ;
                 }
-                bitmap.Save(@"screenshot\dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png); ;
             }
         }
 
