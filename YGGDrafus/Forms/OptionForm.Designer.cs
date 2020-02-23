@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
+            this.notificationCheckBox = new System.Windows.Forms.CheckBox();
             this.notificationLabel = new System.Windows.Forms.Label();
             this.pathButton = new System.Windows.Forms.Button();
             this.pathTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +48,9 @@
             this.newLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.notificationCheckBox = new System.Windows.Forms.CheckBox();
+            this.screenshotEditButton = new System.Windows.Forms.Button();
+            this.screenshotTextBox = new System.Windows.Forms.TextBox();
+            this.screenshotLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.shortcutTabPage.SuspendLayout();
@@ -81,6 +84,15 @@
             this.generalTabPage.Size = new System.Drawing.Size(378, 394);
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "Général";
+            // 
+            // notificationCheckBox
+            // 
+            this.notificationCheckBox.AutoSize = true;
+            this.notificationCheckBox.Location = new System.Drawing.Point(152, 81);
+            this.notificationCheckBox.Name = "notificationCheckBox";
+            this.notificationCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.notificationCheckBox.TabIndex = 4;
+            this.notificationCheckBox.UseVisualStyleBackColor = true;
             // 
             // notificationLabel
             // 
@@ -127,6 +139,9 @@
             // shortcutTabPage
             // 
             this.shortcutTabPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.shortcutTabPage.Controls.Add(this.screenshotEditButton);
+            this.shortcutTabPage.Controls.Add(this.screenshotTextBox);
+            this.shortcutTabPage.Controls.Add(this.screenshotLabel);
             this.shortcutTabPage.Controls.Add(this.defaultButton);
             this.shortcutTabPage.Controls.Add(this.nextEditButton);
             this.shortcutTabPage.Controls.Add(this.previousEditButton);
@@ -148,7 +163,7 @@
             // 
             this.defaultButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.defaultButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.defaultButton.Location = new System.Drawing.Point(20, 120);
+            this.defaultButton.Location = new System.Drawing.Point(20, 150);
             this.defaultButton.Name = "defaultButton";
             this.defaultButton.Size = new System.Drawing.Size(75, 23);
             this.defaultButton.TabIndex = 12;
@@ -160,7 +175,7 @@
             // 
             this.nextEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.nextEditButton.Location = new System.Drawing.Point(246, 47);
+            this.nextEditButton.Location = new System.Drawing.Point(256, 47);
             this.nextEditButton.Name = "nextEditButton";
             this.nextEditButton.Size = new System.Drawing.Size(35, 22);
             this.nextEditButton.TabIndex = 11;
@@ -173,7 +188,7 @@
             // 
             this.previousEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previousEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.previousEditButton.Location = new System.Drawing.Point(246, 77);
+            this.previousEditButton.Location = new System.Drawing.Point(256, 77);
             this.previousEditButton.Name = "previousEditButton";
             this.previousEditButton.Size = new System.Drawing.Size(35, 22);
             this.previousEditButton.TabIndex = 10;
@@ -186,7 +201,7 @@
             // 
             this.newEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.newEditButton.Location = new System.Drawing.Point(246, 17);
+            this.newEditButton.Location = new System.Drawing.Point(256, 17);
             this.newEditButton.Name = "newEditButton";
             this.newEditButton.Size = new System.Drawing.Size(35, 22);
             this.newEditButton.TabIndex = 8;
@@ -199,7 +214,7 @@
             // 
             this.previousTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.previousTextBox.Enabled = false;
-            this.previousTextBox.Location = new System.Drawing.Point(136, 78);
+            this.previousTextBox.Location = new System.Drawing.Point(146, 78);
             this.previousTextBox.Name = "previousTextBox";
             this.previousTextBox.ReadOnly = true;
             this.previousTextBox.Size = new System.Drawing.Size(100, 20);
@@ -208,7 +223,7 @@
             // nextTextBox
             // 
             this.nextTextBox.Enabled = false;
-            this.nextTextBox.Location = new System.Drawing.Point(136, 48);
+            this.nextTextBox.Location = new System.Drawing.Point(146, 48);
             this.nextTextBox.Name = "nextTextBox";
             this.nextTextBox.ReadOnly = true;
             this.nextTextBox.Size = new System.Drawing.Size(100, 20);
@@ -217,7 +232,7 @@
             // newTextBox
             // 
             this.newTextBox.Enabled = false;
-            this.newTextBox.Location = new System.Drawing.Point(136, 18);
+            this.newTextBox.Location = new System.Drawing.Point(146, 18);
             this.newTextBox.Name = "newTextBox";
             this.newTextBox.ReadOnly = true;
             this.newTextBox.Size = new System.Drawing.Size(100, 20);
@@ -283,14 +298,39 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // notificationCheckBox
+            // screenshotEditButton
             // 
-            this.notificationCheckBox.AutoSize = true;
-            this.notificationCheckBox.Location = new System.Drawing.Point(152, 81);
-            this.notificationCheckBox.Name = "notificationCheckBox";
-            this.notificationCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.notificationCheckBox.TabIndex = 4;
-            this.notificationCheckBox.UseVisualStyleBackColor = true;
+            this.screenshotEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.screenshotEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.screenshotEditButton.Location = new System.Drawing.Point(256, 107);
+            this.screenshotEditButton.Name = "screenshotEditButton";
+            this.screenshotEditButton.Size = new System.Drawing.Size(35, 22);
+            this.screenshotEditButton.TabIndex = 15;
+            this.screenshotEditButton.TabStop = false;
+            this.screenshotEditButton.Text = "Edit";
+            this.screenshotEditButton.UseVisualStyleBackColor = true;
+            this.screenshotEditButton.Click += new System.EventHandler(this.ScreenshotEditButton_Click);
+            // 
+            // screenshotTextBox
+            // 
+            this.screenshotTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.screenshotTextBox.Enabled = false;
+            this.screenshotTextBox.Location = new System.Drawing.Point(146, 108);
+            this.screenshotTextBox.Name = "screenshotTextBox";
+            this.screenshotTextBox.ReadOnly = true;
+            this.screenshotTextBox.Size = new System.Drawing.Size(100, 20);
+            this.screenshotTextBox.TabIndex = 14;
+            // 
+            // screenshotLabel
+            // 
+            this.screenshotLabel.AutoSize = true;
+            this.screenshotLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.screenshotLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.screenshotLabel.Location = new System.Drawing.Point(10, 110);
+            this.screenshotLabel.Name = "screenshotLabel";
+            this.screenshotLabel.Size = new System.Drawing.Size(131, 15);
+            this.screenshotLabel.TabIndex = 13;
+            this.screenshotLabel.Text = "Prendre un screenshot :";
             // 
             // OptionForm
             // 
@@ -348,5 +388,8 @@
         private System.Windows.Forms.Button defaultButton;
         private System.Windows.Forms.Label notificationLabel;
         private System.Windows.Forms.CheckBox notificationCheckBox;
+        private System.Windows.Forms.Button screenshotEditButton;
+        private System.Windows.Forms.TextBox screenshotTextBox;
+        private System.Windows.Forms.Label screenshotLabel;
     }
 }

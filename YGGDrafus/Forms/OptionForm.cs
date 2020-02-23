@@ -22,8 +22,9 @@ namespace YGGDrafus
         private void AddShorcutsValue(Dictionary<String, String> shortcuts)
         {
             newTextBox.Text = shortcuts["new"];
-            previousTextBox.Text = shortcuts["previous"];
             nextTextBox.Text = shortcuts["next"];
+            previousTextBox.Text = shortcuts["previous"];
+            screenshotTextBox.Text = shortcuts["screenshot"];
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -31,8 +32,9 @@ namespace YGGDrafus
             ConfigurableOptions configurableOption = ((MainForm)Owner).ConfigurableOption;
 
             configurableOption.Shortcuts["new"] = newTextBox.Text;
-            configurableOption.Shortcuts["previous"] = previousTextBox.Text;
             configurableOption.Shortcuts["next"] = nextTextBox.Text;
+            configurableOption.Shortcuts["previous"] = previousTextBox.Text;
+            configurableOption.Shortcuts["screenshot"] = screenshotTextBox.Text;
             configurableOption.GamePath = pathTextBox.Text;
             configurableOption.Notification = notificationCheckBox.Checked;
 
@@ -79,6 +81,8 @@ namespace YGGDrafus
                 nextTextBox.Text = input;
             else if (previousTextBox.Enabled)
                 previousTextBox.Text = input;
+            else if (screenshotTextBox.Enabled)
+                screenshotTextBox.Text = input;
         }
 
         private void OptionForm_KeyUp(object sender, KeyEventArgs e)
@@ -113,6 +117,15 @@ namespace YGGDrafus
                 previousTextBox.Enabled = true;
         }
 
+        private void ScreenshotEditButton_Click(object sender, EventArgs e)
+        {
+            bool doEdit = screenshotTextBox.Enabled;
+
+            DisabledShortcutEdit();
+            if (!doEdit)
+                screenshotTextBox.Enabled = true;
+        }
+
         private void TabControl_TabIndexChanged(object sender, EventArgs e)
         {
             DisabledShortcutEdit();
@@ -123,6 +136,7 @@ namespace YGGDrafus
             newTextBox.Enabled = false;
             nextTextBox.Enabled = false;
             previousTextBox.Enabled = false;
+            screenshotTextBox.Enabled = false;
         }
 
         private void DefaultButton_Click(object sender, EventArgs e)

@@ -32,9 +32,9 @@ namespace YGGDrafus
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.axShockwaveFlashGame = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.indexLabel = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.indexLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlashGame)).BeginInit();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -66,6 +66,17 @@ namespace YGGDrafus
             this.gamePanel.Size = new System.Drawing.Size(50, 556);
             this.gamePanel.TabIndex = 2;
             // 
+            // indexLabel
+            // 
+            this.indexLabel.AutoSize = true;
+            this.indexLabel.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indexLabel.ForeColor = System.Drawing.Color.White;
+            this.indexLabel.Location = new System.Drawing.Point(7, 2);
+            this.indexLabel.Name = "indexLabel";
+            this.indexLabel.Size = new System.Drawing.Size(16, 20);
+            this.indexLabel.TabIndex = 5;
+            this.indexLabel.Text = "?";
+            // 
             // buttonClose
             // 
             this.buttonClose.BackColor = System.Drawing.Color.Black;
@@ -91,17 +102,6 @@ namespace YGGDrafus
             this.pictureBoxLogo.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxLogo.TabIndex = 3;
             this.pictureBoxLogo.TabStop = false;
-            // 
-            // indexLabel
-            // 
-            this.indexLabel.AutoSize = true;
-            this.indexLabel.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.indexLabel.ForeColor = System.Drawing.Color.White;
-            this.indexLabel.Location = new System.Drawing.Point(7, 2);
-            this.indexLabel.Name = "IndexLabel";
-            this.indexLabel.Size = new System.Drawing.Size(16, 20);
-            this.indexLabel.TabIndex = 5;
-            this.indexLabel.Text = "?";
             // 
             // GameForm
             // 
@@ -133,6 +133,7 @@ namespace YGGDrafus
         private System.Windows.Forms.Label indexLabel;
 
         public System.Windows.Forms.Label IndexLabel { get => indexLabel; }
+        public System.Windows.Forms.Panel GamePanel { get => gamePanel; }
     }
 }
 

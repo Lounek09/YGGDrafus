@@ -65,11 +65,13 @@ namespace YGGDrafus
 
         public static Dictionary<String, String> DefaultShorcuts()
         {
-            Dictionary<String, String> defaultShortcuts = new Dictionary<string, string>();
-
-            defaultShortcuts.Add("new", "Ctrl+N");
-            defaultShortcuts.Add("next", "F2");
-            defaultShortcuts.Add("previous", "F3");
+            Dictionary<String, String> defaultShortcuts = new Dictionary<string, string>
+            {
+                { "new", "Ctrl+N" },
+                { "next", "F2" },
+                { "previous", "F3" },
+                { "screenshot", "F5" }
+            };
 
             return defaultShortcuts;
         }

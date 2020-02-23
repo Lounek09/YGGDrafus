@@ -4,6 +4,8 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace YGGDrafus
 {
@@ -148,6 +150,8 @@ namespace YGGDrafus
                 Next();
             if (String.Equals(input, shortcuts["previous"], StringComparison.Ordinal))
                 Previous();
+            if (String.Equals(input, shortcuts["screenshot"], StringComparison.Ordinal) && gameListToolStripComboBox.Items.Count != 0)
+                TakeScreenShot();
         }
 
         private void Next()
@@ -164,7 +168,7 @@ namespace YGGDrafus
             }
         }
 
-        public void Previous()
+        private void Previous()
         {
             int selectedIndex = gameListToolStripComboBox.SelectedIndex;
             int nbInstance = children.Count;
@@ -175,6 +179,20 @@ namespace YGGDrafus
                     gameListToolStripComboBox.SelectedIndex = selectedIndex - 1;
                 else
                     gameListToolStripComboBox.SelectedIndex = nbInstance - 1;
+            }
+        }
+
+        private void TakeScreenShot()
+        {
+            Rectangle bounds = Bounds;
+            using (Bitmap bitmap = new Bitmap(bounds.Width - 22 - children[gameListToolStripComboBox.SelectedIndex].GamePanel.Width, bounds.Height - mainMenuStrip.Height - 44))
+            {
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.CopyFromScreen(new Point(bounds.Left + 12, bounds.Top + mainMenuStrip.Height + 34), Point.Empty, bounds.Size);
+
+                }
+                bitmap.Save(@"screenshot\dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png); ;
             }
         }
 
