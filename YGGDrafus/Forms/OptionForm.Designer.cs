@@ -36,6 +36,9 @@
             this.pathTextBox = new System.Windows.Forms.TextBox();
             this.pathLabel = new System.Windows.Forms.Label();
             this.shortcutTabPage = new System.Windows.Forms.TabPage();
+            this.screenshotEditButton = new System.Windows.Forms.Button();
+            this.screenshotTextBox = new System.Windows.Forms.TextBox();
+            this.screenshotLabel = new System.Windows.Forms.Label();
             this.defaultButton = new System.Windows.Forms.Button();
             this.nextEditButton = new System.Windows.Forms.Button();
             this.previousEditButton = new System.Windows.Forms.Button();
@@ -48,9 +51,6 @@
             this.newLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.screenshotEditButton = new System.Windows.Forms.Button();
-            this.screenshotTextBox = new System.Windows.Forms.TextBox();
-            this.screenshotLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.shortcutTabPage.SuspendLayout();
@@ -158,6 +158,40 @@
             this.shortcutTabPage.Size = new System.Drawing.Size(378, 394);
             this.shortcutTabPage.TabIndex = 1;
             this.shortcutTabPage.Text = "Raccourci";
+            // 
+            // screenshotEditButton
+            // 
+            this.screenshotEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.screenshotEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.screenshotEditButton.Location = new System.Drawing.Point(256, 107);
+            this.screenshotEditButton.Name = "screenshotEditButton";
+            this.screenshotEditButton.Size = new System.Drawing.Size(35, 22);
+            this.screenshotEditButton.TabIndex = 15;
+            this.screenshotEditButton.TabStop = false;
+            this.screenshotEditButton.Text = "Edit";
+            this.screenshotEditButton.UseVisualStyleBackColor = true;
+            this.screenshotEditButton.Click += new System.EventHandler(this.ScreenshotEditButton_Click);
+            // 
+            // screenshotTextBox
+            // 
+            this.screenshotTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.screenshotTextBox.Enabled = false;
+            this.screenshotTextBox.Location = new System.Drawing.Point(146, 108);
+            this.screenshotTextBox.Name = "screenshotTextBox";
+            this.screenshotTextBox.ReadOnly = true;
+            this.screenshotTextBox.Size = new System.Drawing.Size(100, 20);
+            this.screenshotTextBox.TabIndex = 14;
+            // 
+            // screenshotLabel
+            // 
+            this.screenshotLabel.AutoSize = true;
+            this.screenshotLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.screenshotLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.screenshotLabel.Location = new System.Drawing.Point(10, 110);
+            this.screenshotLabel.Name = "screenshotLabel";
+            this.screenshotLabel.Size = new System.Drawing.Size(131, 15);
+            this.screenshotLabel.TabIndex = 13;
+            this.screenshotLabel.Text = "Prendre un screenshot :";
             // 
             // defaultButton
             // 
@@ -298,40 +332,6 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // screenshotEditButton
-            // 
-            this.screenshotEditButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.screenshotEditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.screenshotEditButton.Location = new System.Drawing.Point(256, 107);
-            this.screenshotEditButton.Name = "screenshotEditButton";
-            this.screenshotEditButton.Size = new System.Drawing.Size(35, 22);
-            this.screenshotEditButton.TabIndex = 15;
-            this.screenshotEditButton.TabStop = false;
-            this.screenshotEditButton.Text = "Edit";
-            this.screenshotEditButton.UseVisualStyleBackColor = true;
-            this.screenshotEditButton.Click += new System.EventHandler(this.ScreenshotEditButton_Click);
-            // 
-            // screenshotTextBox
-            // 
-            this.screenshotTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.screenshotTextBox.Enabled = false;
-            this.screenshotTextBox.Location = new System.Drawing.Point(146, 108);
-            this.screenshotTextBox.Name = "screenshotTextBox";
-            this.screenshotTextBox.ReadOnly = true;
-            this.screenshotTextBox.Size = new System.Drawing.Size(100, 20);
-            this.screenshotTextBox.TabIndex = 14;
-            // 
-            // screenshotLabel
-            // 
-            this.screenshotLabel.AutoSize = true;
-            this.screenshotLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.screenshotLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.screenshotLabel.Location = new System.Drawing.Point(10, 110);
-            this.screenshotLabel.Name = "screenshotLabel";
-            this.screenshotLabel.Size = new System.Drawing.Size(131, 15);
-            this.screenshotLabel.TabIndex = 13;
-            this.screenshotLabel.Text = "Prendre un screenshot :";
-            // 
             // OptionForm
             // 
             this.AcceptButton = this.saveButton;
@@ -340,16 +340,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(384, 461);
-            this.ControlBox = false;
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.tabControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OptionForm";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";

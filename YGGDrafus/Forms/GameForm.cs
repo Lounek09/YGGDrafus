@@ -139,14 +139,14 @@ namespace YGGDrafus
             if (message.Length > 100)
                 message = message.Substring(0, 100) + "...";
 
-            ((MainForm)MdiParent).MakeNotification((String)((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()], message);
+            ((MainForm)MdiParent).MakeNotification((String)((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()], message, Constant.IMG_PATH + "YGGDrafus-game.png");
 
         }
 
         private void SetLoginDiscordActivity()
         {
 
-            pictureBoxLogo.ImageLocation = @"img\login.png";
+            pictureBoxLogo.ImageLocation = Constant.IMG_PATH + "login.png";
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - Connexion";
         }
 
@@ -155,80 +155,80 @@ namespace YGGDrafus
             String playerPseudo = (String)args[2];
             int classId = Convert.ToInt16(args[5], NumberFormatInfo.InvariantInfo);
             int sexeId = Convert.ToByte(args[6], NumberFormatInfo.InvariantInfo);
-            String logo = @"img\login.png";
+            String logo = Constant.IMG_PATH + "login.png";
             switch(classId)
             {
                 case 1: //Feca
                     if (sexeId == 1)
-                        logo = @"img\fecaF.png";
+                        logo = Constant.IMG_PATH + "fecaF.png";
                     else
-                        logo = @"img\fecaM.png";
+                        logo = Constant.IMG_PATH + "fecaM.png";
                     break;
                 case 2: //Osamodas
                     if (sexeId == 1)
-                        logo = @"img\osaF.png";
+                        logo = Constant.IMG_PATH + "osaF.png";
                     else
-                        logo = @"img\osaM.png";
+                        logo = Constant.IMG_PATH + "osaM.png";
                     break;
                 case 3: //Enutrof
                     if (sexeId == 1)
-                        logo = @"img\enuF.png";
+                        logo = Constant.IMG_PATH + "enuF.png";
                     else
-                        logo = @"img\enuM.png";
+                        logo = Constant.IMG_PATH + "enuM.png";
                     break;
                 case 4: //Sram
                     if (sexeId == 1)
-                        logo = @"img\sramF.png";
+                        logo = Constant.IMG_PATH + "sramF.png";
                     else
-                        logo = @"img\sramM.png";
+                        logo = Constant.IMG_PATH + "sramM.png";
                     break;
                 case 5: //Xelor
                     if (sexeId == 1)
-                        logo = @"img\xelF.png";
+                        logo = Constant.IMG_PATH + "xelF.png";
                     else
-                        logo = @"img\xelM.png";
+                        logo = Constant.IMG_PATH + "xelM.png";
                     break;
                 case 6: //Ecaflip
                     if (sexeId == 1)
-                        logo = @"img\ecaF.png";
+                        logo = Constant.IMG_PATH + "ecaF.png";
                     else
-                        logo = @"img\ecaM.png";
+                        logo = Constant.IMG_PATH + "ecaM.png";
                     break;
                 case 7: //Eniripsa
                     if (sexeId == 1)
-                        logo = @"img\eniF.png";
+                        logo = Constant.IMG_PATH + "eniF.png";
                     else
-                        logo = @"img\eniM.png";
+                        logo = Constant.IMG_PATH + "eniM.png";
                     break;
                 case 8: //Iop
                     if (sexeId == 1)
-                        logo = @"img\iopF.png";
+                        logo = Constant.IMG_PATH + "iopF.png";
                     else
-                        logo = @"img\iopM.png";
+                        logo = Constant.IMG_PATH + "iopM.png";
                     break;
                 case 9: //Cra
                     if (sexeId == 1)
-                        logo = @"img\craF.png";
+                        logo = Constant.IMG_PATH + "craF.png";
                     else
-                        logo = @"img\craM.png";
+                        logo = Constant.IMG_PATH + "craM.png";
                     break;
                 case 10: //Sadida
                     if (sexeId == 1)
-                        logo = @"img\sadiF.png";
+                        logo = Constant.IMG_PATH + "sadiF.png";
                     else
-                        logo = @"img\sadiM.png";
+                        logo = Constant.IMG_PATH + "sadiM.png";
                     break;
                 case 11: //Sacrieur
                     if (sexeId == 1)
-                        logo = @"img\sacriF.png";
+                        logo = Constant.IMG_PATH + "sacriF.png";
                     else
-                        logo = @"img\sacriM.png";
+                        logo = Constant.IMG_PATH + "sacriM.png";
                     break;
                 case 12: //Pandawa
                     if (sexeId == 1)
-                        logo = @"img\pandaF.png";
+                        logo = Constant.IMG_PATH + "pandaF.png";
                     else
-                        logo = @"img\pandaM.png";
+                        logo = Constant.IMG_PATH + "pandaM.png";
                     break;
             }
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - " + playerPseudo;

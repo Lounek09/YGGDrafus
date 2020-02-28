@@ -82,6 +82,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Constant.cs" />
     <Compile Include="Class\ExecuteCmd.cs" />
     <Compile Include="Class\ExtendedKeyEventArgs.cs" />
     <Compile Include="Forms\OptionForm.cs">

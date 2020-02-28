@@ -1,6 +1,7 @@
 ﻿using Ookii.Dialogs.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace YGGDrafus
@@ -14,6 +15,7 @@ namespace YGGDrafus
 
         private void OptionForm_Load(object sender, EventArgs e)
         {
+            Icon = new Icon(Constant.OPTION_ICO_FILE);
             pathTextBox.Text = ((MainForm)Owner).ConfigurableOptions.GamePath;
             AddShorcutsValue(((MainForm)Owner).ConfigurableOptions.Shortcuts);
             notificationCheckBox.Checked = ((MainForm)Owner).ConfigurableOptions.Notification;

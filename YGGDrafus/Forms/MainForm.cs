@@ -27,6 +27,7 @@ namespace YGGDrafus
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Icon = new Icon(Constant.MAIN_ICO_FILE);
             InitConfigurableOptions();
         }
 
@@ -192,14 +193,11 @@ namespace YGGDrafus
                 using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
                 {
                     using (Graphics graphics = Graphics.FromImage(bitmap))
-                    {
                         graphics.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size, CopyPixelOperation.SourceCopy);
-
-                    }
-                    bitmap.Save(@"screenshot\dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png); ;
+                    bitmap.Save(Constant.SCREENSHOT_PATH + "dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png);
                 }
 
-                MakeNotification("YGGDrafus", "Vous avez pris un screenshot !");
+                MakeNotification("YGGDrafus", "Vous avez pris un screenshot !", Constant.IMG_PATH + "YGGDrafus-screenshot.png");
             }
         }
 
@@ -232,9 +230,9 @@ namespace YGGDrafus
             }
         }
 
-        public void MakeNotification(String title, String message)
+        public void MakeNotification(String title, String message, String logo)
         {
-            ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + @"img\YGGDrafus.png");
+            ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + logo);
 
         }
     }
