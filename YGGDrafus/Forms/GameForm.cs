@@ -12,13 +12,11 @@ namespace YGGDrafus
 {
     public partial class GameForm : Form
     {
-        private readonly List<string> packets;
         private readonly string gamePath;
 
         public GameForm(String gamePath)
         {
             InitializeComponent();
-            packets = new List<string>();
             this.gamePath = gamePath;
         }
 
@@ -112,25 +110,33 @@ namespace YGGDrafus
         private void DebugRequest(ArrayList args)
         {
             String data, playerName, currentServer, arrow, message;
+            PacketForm packetForm = null;
 
-            if(String.IsNullOrEmpty(args[0].ToString()))
-                arrow = "<-->";
-            else
+            foreach (Form form in ((MainForm)MdiParent).OwnedForms)
             {
-                arrow = (bool)args[0] ? "-->" : "<--";
-            } 
-            data = String.IsNullOrEmpty(args[2].ToString()) ? null : args[2].ToString();
-            playerName = String.IsNullOrEmpty(args[3].ToString()) ? null : args[3].ToString();
-            currentServer = String.IsNullOrEmpty(args[4].ToString()) ? null : args[4].ToString();
+                if (form is PacketForm)
+                {
+                    packetForm = (PacketForm)form;
+                    break;
+                }
+            }
+            if (!(packetForm is null))
+            {
+                if (String.IsNullOrEmpty(args[0].ToString()))
+                    arrow = "<-->";
+                else
+                    arrow = (bool)args[0] ? "-->" : "<--";
+                data = String.IsNullOrEmpty(args[2].ToString()) ? null : args[2].ToString();
+                playerName = String.IsNullOrEmpty(args[3].ToString()) ? null : args[3].ToString();
+                currentServer = String.IsNullOrEmpty(args[4].ToString()) ? null : args[4].ToString();
             
-            if (playerName == null)
-                message = arrow + " " + data;
-            else
-                message = "(" + playerName + ", " + currentServer + ") " + arrow + " " + data;
+                if (playerName == null)
+                    message = arrow + " " + data;
+                else
+                    message = "(" + playerName + ", " + currentServer + ") " + arrow + " " + data;
 
-            packets.Insert(0, message);
-            if (packets.Count > 100)
-                packets.RemoveAt(100);
+                packetForm.AddNewPacket(message);
+            }
         }
 
         private void MakeNotification(String message)

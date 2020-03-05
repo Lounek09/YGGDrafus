@@ -11,12 +11,7 @@ C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csproj.
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.exe
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.pdb
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csprojAssemblyReference.cache
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Microsoft.WindowsAPICodePack.dll
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Newtonsoft.Json.dll
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Tulpep.NotificationWindow.dll
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Microsoft.WindowsAPICodePack.xml
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\Newtonsoft.Json.xml
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.GameForm.resources
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.MainForm.resources

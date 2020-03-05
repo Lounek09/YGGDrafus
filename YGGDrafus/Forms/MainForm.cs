@@ -125,15 +125,12 @@ namespace YGGDrafus
             optionToolStripMenuItem.Enabled = false;
         }
 
-        public void ReorganizeGameListText()
+        private void paquetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < gameListToolStripComboBox.Items.Count; i++)
-            {
-                string value = (String)gameListToolStripComboBox.Items[i];
-                value = value.Split('-')[1];
-                gameListToolStripComboBox.Items[i] = (i + 1) + " -" + value;
-                children[i].IndexLabel.Text = (i + 1).ToString();
-            }
+            PacketForm packetForm = new PacketForm { Owner = this };
+            packetForm.Show();
+
+            packetToolStripMenuItem.Enabled = false; 
         }
 
         #endregion
@@ -233,7 +230,17 @@ namespace YGGDrafus
         public void MakeNotification(String title, String message, String logo)
         {
             ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + logo);
+        }
 
+        public void ReorganizeGameListText()
+        {
+            for (int i = 0; i < gameListToolStripComboBox.Items.Count; i++)
+            {
+                string value = (String)gameListToolStripComboBox.Items[i];
+                value = value.Split('-')[1];
+                gameListToolStripComboBox.Items[i] = (i + 1) + " -" + value;
+                children[i].IndexLabel.Text = (i + 1).ToString();
+            }
         }
     }
 }
