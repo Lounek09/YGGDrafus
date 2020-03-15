@@ -21,3 +21,4 @@ C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Debug\Ookii.Dialogs.WinFo
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Debug\Ookii.Dialogs.WinForms.xml
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.csprojAssemblyReference.cache
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.PacketForm.resources
+C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.Packet.FilterPacketForm.resources

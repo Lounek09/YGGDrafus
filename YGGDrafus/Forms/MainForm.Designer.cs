@@ -112,7 +112,7 @@
             this.packetToolStripMenuItem.Name = "packetToolStripMenuItem";
             this.packetToolStripMenuItem.Size = new System.Drawing.Size(60, 25);
             this.packetToolStripMenuItem.Text = "Paquet";
-            this.packetToolStripMenuItem.Click += new System.EventHandler(this.paquetToolStripMenuItem_Click);
+            this.packetToolStripMenuItem.Click += new System.EventHandler(this.PaquetToolStripMenuItem_Click);
             // 
             // MainForm
             // 

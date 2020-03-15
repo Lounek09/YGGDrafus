@@ -53,7 +53,7 @@ namespace YGGDrafus
 
         #endregion
 
-        #region ToolStrip
+        #region MenuStrip
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddNewGame();
@@ -125,7 +125,7 @@ namespace YGGDrafus
             optionToolStripMenuItem.Enabled = false;
         }
 
-        private void paquetToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PaquetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PacketForm packetForm = new PacketForm { Owner = this };
             packetForm.Show();

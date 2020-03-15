@@ -30,6 +30,7 @@
         {
             this.packetTextBox = new System.Windows.Forms.TextBox();
             this.packetMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packetMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             this.packetMenuStrip.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.packetMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.filterToolStripMenuItem,
             this.clearToolStripMenuItem});
             this.packetMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.packetMenuStrip.Name = "packetMenuStrip";
@@ -61,13 +63,21 @@
             this.packetMenuStrip.TabIndex = 1;
             this.packetMenuStrip.Text = "packetMenuStrip";
             // 
+            // filterToolStripMenuItem
+            // 
+            this.filterToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
+            this.filterToolStripMenuItem.Text = "Filtre";
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.FilterToolStripMenuItem_Click);
+            // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             this.clearToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
             this.clearToolStripMenuItem.Text = "Clear";
-            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.ClearToolStripMenuItem_Click);
             // 
             // PacketForm
             // 
@@ -93,5 +103,8 @@
         private System.Windows.Forms.TextBox packetTextBox;
         private System.Windows.Forms.MenuStrip packetMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
+
+        public System.Windows.Forms.ToolStripMenuItem FilterToolStripMenuItem { get => filterToolStripMenuItem; }
     }
 }
