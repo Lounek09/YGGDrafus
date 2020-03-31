@@ -51,6 +51,8 @@
             this.newLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.screenshotFolderLabel = new System.Windows.Forms.Label();
+            this.screenshotFolderButton = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.shortcutTabPage.SuspendLayout();
@@ -73,6 +75,8 @@
             // generalTabPage
             // 
             this.generalTabPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.generalTabPage.Controls.Add(this.screenshotFolderButton);
+            this.generalTabPage.Controls.Add(this.screenshotFolderLabel);
             this.generalTabPage.Controls.Add(this.notificationCheckBox);
             this.generalTabPage.Controls.Add(this.notificationLabel);
             this.generalTabPage.Controls.Add(this.pathButton);
@@ -332,6 +336,29 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // screenshotFolderLabel
+            // 
+            this.screenshotFolderLabel.AutoSize = true;
+            this.screenshotFolderLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.screenshotFolderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.screenshotFolderLabel.Location = new System.Drawing.Point(10, 110);
+            this.screenshotFolderLabel.Name = "screenshotFolderLabel";
+            this.screenshotFolderLabel.Size = new System.Drawing.Size(184, 15);
+            this.screenshotFolderLabel.TabIndex = 5;
+            this.screenshotFolderLabel.Text = "Ouvrir le dossier des screenshots :";
+            // 
+            // screenshotFolderButton
+            // 
+            this.screenshotFolderButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.screenshotFolderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.screenshotFolderButton.Location = new System.Drawing.Point(198, 107);
+            this.screenshotFolderButton.Name = "screenshotFolderButton";
+            this.screenshotFolderButton.Size = new System.Drawing.Size(46, 23);
+            this.screenshotFolderButton.TabIndex = 6;
+            this.screenshotFolderButton.Text = "ouvrir";
+            this.screenshotFolderButton.UseVisualStyleBackColor = true;
+            this.screenshotFolderButton.Click += new System.EventHandler(this.screenshotFolderButton_Click);
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.saveButton;
@@ -389,5 +416,7 @@
         private System.Windows.Forms.Button screenshotEditButton;
         private System.Windows.Forms.TextBox screenshotTextBox;
         private System.Windows.Forms.Label screenshotLabel;
+        private System.Windows.Forms.Button screenshotFolderButton;
+        private System.Windows.Forms.Label screenshotFolderLabel;
     }
 }

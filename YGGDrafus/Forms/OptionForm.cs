@@ -1,7 +1,10 @@
 ﻿using Ookii.Dialogs.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace YGGDrafus
@@ -67,6 +70,16 @@ namespace YGGDrafus
                     dialog.Dispose();
                 }
             }
+        }
+
+        private void screenshotFolderButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\" + Constant.SCREENSHOT_PATH,
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
 
         #endregion
