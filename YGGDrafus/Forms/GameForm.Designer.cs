@@ -80,6 +80,7 @@ namespace YGGDrafus
             // buttonClose
             // 
             this.buttonClose.BackColor = System.Drawing.Color.Black;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonClose.FlatAppearance.BorderSize = 0;
             this.buttonClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
