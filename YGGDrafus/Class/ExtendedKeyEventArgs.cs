@@ -13,9 +13,9 @@ namespace YGGDrafus
         {
         }
 
-        public override String ToString()
+        public override string ToString()
         {
-            String input = "";
+            string input = "";
 
             if (Control)
                 input += "Ctrl+";

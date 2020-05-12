@@ -10,20 +10,23 @@ namespace YGGDrafus
     [Serializable()]
     public class ConfigurableOptions : ISerializable
     {
-        private readonly Dictionary<String, String> shortcuts;
-        private String gamePath;
+        private readonly Dictionary<string, string> shortcuts;
+        private string gamePath;
         private bool notification;
+        private int filterOpacity;
 
-        public Dictionary<String, String> Shortcuts { get => shortcuts; }
-        public String GamePath { get => gamePath; set => gamePath = value; }
+        public Dictionary<string, string> Shortcuts { get => shortcuts; }
+        public string GamePath { get => gamePath; set => gamePath = value; }
         public bool Notification { get => notification; set => notification = value; }
+        public int FilterOpacity { get => filterOpacity; set => filterOpacity = value; }
 
         public ConfigurableOptions()
         {
-            shortcuts = new Dictionary<String, String>();
+            shortcuts = new Dictionary<string, string>();
             shortcuts = DefaultShorcuts();
             gamePath = "";
             notification = true;
+            filterOpacity = 0;
         }
 
         //Deserialization constructor
@@ -31,9 +34,10 @@ namespace YGGDrafus
         {
             if (info != null)
             {
-                shortcuts = (Dictionary<String, String>)info.GetValue("shortcuts", typeof(Dictionary<String, String>));
+                shortcuts = (Dictionary<string, string>)info.GetValue("shortcuts", typeof(Dictionary<string, string>));
                 gamePath = info.GetString("gamePath");
                 notification = (bool)info.GetValue("notification", typeof(bool));
+                filterOpacity = (int)info.GetValue("notification", typeof(int));
             }
         }
 
@@ -44,6 +48,7 @@ namespace YGGDrafus
                 info.AddValue("shortcuts", shortcuts);
                 info.AddValue("gamePath", gamePath);
                 info.AddValue("notification", notification);
+                info.AddValue("filterOpacity", filterOpacity);
             }
         }
 
@@ -63,9 +68,9 @@ namespace YGGDrafus
             }
         }
 
-        public static Dictionary<String, String> DefaultShorcuts()
+        public static Dictionary<string, string> DefaultShorcuts()
         {
-            Dictionary<String, String> defaultShortcuts = new Dictionary<string, string>
+            Dictionary<string, string> defaultShortcuts = new Dictionary<string, string>
             {
                 { "new", "Ctrl+N" },
                 { "next", "F2" },

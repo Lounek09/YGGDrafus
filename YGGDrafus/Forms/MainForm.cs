@@ -139,8 +139,8 @@ namespace YGGDrafus
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            String input = new ExtendedKeyEventArgs(e.KeyData).ToString();
-            Dictionary<String, String> shortcuts = configurableOptions.Shortcuts;
+            string input = new ExtendedKeyEventArgs(e.KeyData).ToString();
+            Dictionary<string, string> shortcuts = configurableOptions.Shortcuts;
 
             if (String.Equals(input, shortcuts["new"], StringComparison.Ordinal))
                 AddNewGame();
@@ -204,7 +204,7 @@ namespace YGGDrafus
         {
             if (children.Count < 8)
             {
-                String loaderPath = configurableOptions.GamePath + @"\resources\app\retroclient\preloader.swf";
+                string loaderPath = configurableOptions.GamePath + @"\resources\app\retroclient\preloader.swf";
                 if (File.Exists(loaderPath))
                 {
                     children.Add(new GameForm(loaderPath + "?electron=true")
@@ -217,7 +217,7 @@ namespace YGGDrafus
                     gameListToolStripComboBox.Items.Add((gameListToolStripComboBox.Items.Count + 1) + " - Chargement");
                     gameListToolStripComboBox.SelectedIndex = gameListToolStripComboBox.Items.Count - 1;
 
-                    if (MdiChildren.Length > 7)
+                    if (children.Count > 7)
                         newToolStripMenuItem.Enabled = false;
                 }
                 else
@@ -227,7 +227,7 @@ namespace YGGDrafus
             }
         }
 
-        public void MakeNotification(String title, String message, String logo)
+        public void MakeNotification(string title, string message, string logo)
         {
             ExecuteCmd.ExecuteCommandAsync(@"notification\snoretoast.exe " + "-t \"" + title + "\" -m \"" + message + "\" -appID YGGDrafus -p " + logo);
         }
@@ -236,10 +236,18 @@ namespace YGGDrafus
         {
             for (int i = 0; i < gameListToolStripComboBox.Items.Count; i++)
             {
-                string value = (String)gameListToolStripComboBox.Items[i];
+                string value = (string)gameListToolStripComboBox.Items[i];
                 value = value.Split('-')[1];
                 gameListToolStripComboBox.Items[i] = (i + 1) + " -" + value;
                 children[i].IndexLabel.Text = (i + 1).ToString();
+            }
+        }
+
+        public void SetGamesFilterOpacity(int value)
+        {
+            foreach(GameForm gameForm in children)
+            {
+                gameForm.SetGameFilterOpacity(value);
             }
         }
     }

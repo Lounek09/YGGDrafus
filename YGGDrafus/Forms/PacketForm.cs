@@ -33,11 +33,11 @@ namespace YGGDrafus
             ((MainForm)Owner).PacketToolStripMenuItem.Enabled = true;
         }
 
-        public void AddNewPacket(String packet)
+        public void AddNewPacket(string packet)
         {
             if (!packetTextBox.Focused && ShowPacket(packet))
             {
-                String timestamp = "[" + DateTime.Now.ToString("HH:mm:ss:ffff") + "]";
+                string timestamp = "[" + DateTime.Now.ToString("HH:mm:ss:ffff") + "]";
 
                 packets.Insert(0,timestamp + " " + packet);
 
@@ -65,11 +65,11 @@ namespace YGGDrafus
 
         #endregion
 
-        private bool ShowPacket(String packet)
+        private bool ShowPacket(string packet)
         {
             bool show = true;
 
-            foreach (String filter in filterInclude)
+            foreach (string filter in filterInclude)
             {
                 if (!packet.Contains(filter))
                 {
@@ -80,7 +80,7 @@ namespace YGGDrafus
 
             if(show)
             {
-                foreach (String filter in filterNotInclude)
+                foreach (string filter in filterNotInclude)
                 {
                     if (packet.Contains(filter))
                     {

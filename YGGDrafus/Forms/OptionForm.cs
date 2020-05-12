@@ -11,6 +11,8 @@ namespace YGGDrafus
 {
     public partial class OptionForm : Form
     {
+        private ConfigurableOptions configurableOptions;
+
         public OptionForm()
         {
             InitializeComponent();
@@ -19,12 +21,17 @@ namespace YGGDrafus
         private void OptionForm_Load(object sender, EventArgs e)
         {
             Icon = new Icon(Constant.OPTION_ICO_FILE);
-            pathTextBox.Text = ((MainForm)Owner).ConfigurableOptions.GamePath;
-            AddShorcutsValue(((MainForm)Owner).ConfigurableOptions.Shortcuts);
-            notificationCheckBox.Checked = ((MainForm)Owner).ConfigurableOptions.Notification;
+
+            configurableOptions = ((MainForm)Owner).ConfigurableOptions;
+
+            //Set save option value
+            pathTextBox.Text = configurableOptions.GamePath;
+            AddShorcutsValue(configurableOptions.Shortcuts);
+            notificationCheckBox.Checked = configurableOptions.Notification;
+            filterOpacityNumericUpDown.Value = configurableOptions.FilterOpacity;
         }
 
-        private void AddShorcutsValue(Dictionary<String, String> shortcuts)
+        private void AddShorcutsValue(Dictionary<string, string> shortcuts)
         {
             newTextBox.Text = shortcuts["new"];
             nextTextBox.Text = shortcuts["next"];
@@ -34,14 +41,13 @@ namespace YGGDrafus
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            ConfigurableOptions configurableOptions = ((MainForm)Owner).ConfigurableOptions;
-
             configurableOptions.Shortcuts["new"] = newTextBox.Text;
             configurableOptions.Shortcuts["next"] = nextTextBox.Text;
             configurableOptions.Shortcuts["previous"] = previousTextBox.Text;
             configurableOptions.Shortcuts["screenshot"] = screenshotTextBox.Text;
             configurableOptions.GamePath = pathTextBox.Text;
             configurableOptions.Notification = notificationCheckBox.Checked;
+            configurableOptions.FilterOpacity = Convert.ToInt32(filterOpacityNumericUpDown.Value);
 
             configurableOptions.Save();
 
@@ -55,7 +61,7 @@ namespace YGGDrafus
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            CloseOptionWithoutSave();
         }
 
         #region General Tab
@@ -82,13 +88,18 @@ namespace YGGDrafus
             });
         }
 
+        private void FilterOpacityNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            ((MainForm)Owner).SetGamesFilterOpacity(Convert.ToInt32(filterOpacityNumericUpDown.Value));
+        }
+
         #endregion
 
         #region Shortcut Tab
 
         private void OptionForm_KeyDown(object sender, KeyEventArgs e)
         {
-            String input = new ExtendedKeyEventArgs(e.KeyData).ToString();
+            string input = new ExtendedKeyEventArgs(e.KeyData).ToString();
 
             if (newTextBox.Enabled)
                 newTextBox.Text = input;
@@ -161,5 +172,11 @@ namespace YGGDrafus
         }
 
         #endregion
+
+        private void CloseOptionWithoutSave()
+        {
+            ((MainForm)Owner).SetGamesFilterOpacity(configurableOptions.FilterOpacity);
+            Close();
+        }
     }
 }

@@ -1,12 +1,10 @@
 ﻿using AxShockwaveFlashObjects;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
-
 
 namespace YGGDrafus
 {
@@ -14,7 +12,7 @@ namespace YGGDrafus
     {
         private readonly string gamePath;
 
-        public GameForm(String gamePath)
+        public GameForm(string gamePath)
         {
             InitializeComponent();
             this.gamePath = gamePath;
@@ -30,9 +28,12 @@ namespace YGGDrafus
         private void InitGame()
         {
             // Launch the game
-            gameAxShockwaveFlash.Movie = gamePath;
+            gameAxShockwaveFlash.LoadMovie(0, gamePath);
 
-            // Communicate with Flash
+            //Add Filter
+            SetGameFilterOpacity(((MainForm)MdiParent).ConfigurableOptions.FilterOpacity);
+
+            // Communication Flash
             gameAxShockwaveFlash.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(GameAxShockwaveFlash_FlashCall);
         }
 
@@ -72,7 +73,7 @@ namespace YGGDrafus
 
             if (document != null)
             {
-                String nameFunction = document.DocumentElement.GetAttribute("name");
+                string nameFunction = document.DocumentElement.GetAttribute("name");
                 document.ToString();
                 //Set all arg into an ArrayList
                 ArrayList args = new ArrayList();
@@ -93,7 +94,7 @@ namespace YGGDrafus
                         break;
                     case "makeNotification":
                         if (((MainForm)MdiParent).ConfigurableOptions.Notification && ActiveForm == null)
-                            MakeNotification((String)args[0]);
+                            MakeNotification((string)args[0]);
                         break;
                     case "setLoginDiscordActivity":
                         SetLoginDiscordActivity();
@@ -109,7 +110,7 @@ namespace YGGDrafus
         
         private void DebugRequest(ArrayList args)
         {
-            String data, playerName, currentServer, arrow, message;
+            string data, playerName, currentServer, arrow, message;
             PacketForm packetForm = null;
 
             foreach (Form form in ((MainForm)MdiParent).OwnedForms)
@@ -139,7 +140,7 @@ namespace YGGDrafus
             }
         }
 
-        private void MakeNotification(String message)
+        private void MakeNotification(string message)
         {
             message = message.Replace("\r\n","");
             if (message.Length > 100)
@@ -158,10 +159,10 @@ namespace YGGDrafus
 
         private void SetIngameDiscordActivity(ArrayList args)
         {
-            String playerPseudo = (String)args[2];
+            string playerPseudo = (string)args[2];
             int classId = Convert.ToInt16(args[5], NumberFormatInfo.InvariantInfo);
             int sexeId = Convert.ToByte(args[6], NumberFormatInfo.InvariantInfo);
-            String logo = Constant.IMG_PATH + "login.png";
+            string logo = Constant.IMG_PATH + "login.png";
             switch(classId)
             {
                 case 1: //Feca
@@ -282,6 +283,11 @@ namespace YGGDrafus
             ((MainForm)MdiParent).ReorganizeGameListText();
 
             Close();
+        }
+
+        public void SetGameFilterOpacity(int value)
+        {
+            gameAxShockwaveFlash.LoadMovie(1, Path.GetFullPath(Constant.SWF_PATH + "filter.swf") + "?opacity=" + value);
         }
     }
 }
