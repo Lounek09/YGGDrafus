@@ -37,7 +37,7 @@ namespace YGGDrafus
                 shortcuts = (Dictionary<string, string>)info.GetValue("shortcuts", typeof(Dictionary<string, string>));
                 gamePath = info.GetString("gamePath");
                 notification = (bool)info.GetValue("notification", typeof(bool));
-                filterOpacity = (int)info.GetValue("notification", typeof(int));
+                filterOpacity = (int)info.GetValue("filterOpacity", typeof(int));
             }
         }
 
