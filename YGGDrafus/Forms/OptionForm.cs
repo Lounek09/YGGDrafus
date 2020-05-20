@@ -24,11 +24,13 @@ namespace YGGDrafus
 
             configurableOptions = ((MainForm)Owner).ConfigurableOptions;
 
-            //Set save option value
-            pathTextBox.Text = configurableOptions.GamePath;
+            //Set saved option value
             AddShorcutsValue(configurableOptions.Shortcuts);
+            pathTextBox.Text = configurableOptions.GamePath;
             notificationCheckBox.Checked = configurableOptions.Notification;
-            filterOpacityNumericUpDown.Value = configurableOptions.FilterOpacity;
+            enableFilterOpacityCheckBox.Checked = configurableOptions.EnableFilterOpacity;
+            EnableFilterOpacityValue();
+            filterOpacityValueNumericUpDown.Value = configurableOptions.FilterOpacityValue;
         }
 
         private void AddShorcutsValue(Dictionary<string, string> shortcuts)
@@ -41,17 +43,36 @@ namespace YGGDrafus
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            configurableOptions.Shortcuts["new"] = newTextBox.Text;
-            configurableOptions.Shortcuts["next"] = nextTextBox.Text;
-            configurableOptions.Shortcuts["previous"] = previousTextBox.Text;
-            configurableOptions.Shortcuts["screenshot"] = screenshotTextBox.Text;
+            SaveShorcutsValue();
             configurableOptions.GamePath = pathTextBox.Text;
             configurableOptions.Notification = notificationCheckBox.Checked;
-            configurableOptions.FilterOpacity = Convert.ToInt32(filterOpacityNumericUpDown.Value);
+            configurableOptions.EnableFilterOpacity = enableFilterOpacityCheckBox.Checked;
+            EnableFilterOpacityValue();
+            configurableOptions.FilterOpacityValue = Convert.ToInt32(filterOpacityValueNumericUpDown.Value);
 
             configurableOptions.Save();
 
             Close();
+        }
+
+        private void SaveShorcutsValue()
+        {
+            configurableOptions.Shortcuts["new"] = newTextBox.Text;
+            configurableOptions.Shortcuts["next"] = nextTextBox.Text;
+            configurableOptions.Shortcuts["previous"] = previousTextBox.Text;
+            configurableOptions.Shortcuts["screenshot"] = screenshotTextBox.Text;
+        }
+
+        private void EnableFilterOpacityValue()
+        {
+            filterOpacityValueLabel.Enabled = enableFilterOpacityCheckBox.Checked;
+            filterOpacityValueNumericUpDown.Enabled = enableFilterOpacityCheckBox.Checked;
+            UpdateFilterOpacity(Convert.ToInt32(filterOpacityValueNumericUpDown.Value), enableFilterOpacityCheckBox.Checked);
+        }
+
+        private void UpdateFilterOpacity(int value, bool enable)
+        {
+            ((MainForm)Owner).SetGamesFilterOpacity(value, enable);
         }
 
         private void OptionForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,19 +99,24 @@ namespace YGGDrafus
             }
         }
 
-        private void screenshotFolderButton_Click(object sender, EventArgs e)
+        private void EnableFilterOpacityCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableFilterOpacityValue();
+        }
+
+        private void FilterOpacityValueNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateFilterOpacity(Convert.ToInt32(filterOpacityValueNumericUpDown.Value), enableFilterOpacityCheckBox.Checked);
+        }
+
+        private void ScreenshotFolderButton_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo()
             {
-                FileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\" + Constant.SCREENSHOT_PATH,
+                FileName = Path.GetFullPath(Constant.SCREENSHOT_PATH),
                 UseShellExecute = true,
                 Verb = "open"
             });
-        }
-
-        private void FilterOpacityNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            ((MainForm)Owner).SetGamesFilterOpacity(Convert.ToInt32(filterOpacityNumericUpDown.Value));
         }
 
         #endregion
@@ -175,7 +201,7 @@ namespace YGGDrafus
 
         private void CloseOptionWithoutSave()
         {
-            ((MainForm)Owner).SetGamesFilterOpacity(configurableOptions.FilterOpacity);
+            UpdateFilterOpacity(configurableOptions.FilterOpacityValue, configurableOptions.EnableFilterOpacity);
             Close();
         }
     }

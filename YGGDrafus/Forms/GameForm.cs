@@ -31,7 +31,7 @@ namespace YGGDrafus
             gameAxShockwaveFlash.LoadMovie(0, gamePath);
 
             //Add Filter
-            SetGameFilterOpacity(((MainForm)MdiParent).ConfigurableOptions.FilterOpacity);
+            SetGameFilterOpacity(((MainForm)MdiParent).ConfigurableOptions.FilterOpacityValue, ((MainForm)MdiParent).ConfigurableOptions.EnableFilterOpacity);
 
             // Communication Flash
             gameAxShockwaveFlash.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(GameAxShockwaveFlash_FlashCall);
@@ -285,9 +285,12 @@ namespace YGGDrafus
             Close();
         }
 
-        public void SetGameFilterOpacity(int value)
+        public void SetGameFilterOpacity(int value, bool enable)
         {
-            gameAxShockwaveFlash.LoadMovie(1, Path.GetFullPath(Constant.SWF_PATH + "filter.swf") + "?opacity=" + value);
+            if (enable)
+                gameAxShockwaveFlash.LoadMovie(1, Path.GetFullPath(Constant.SWF_PATH + "filter.swf") + "?opacity=" + value);
+            else
+                gameAxShockwaveFlash.LoadMovie(1, "");
         }
     }
 }

@@ -13,12 +13,14 @@ namespace YGGDrafus
         private readonly Dictionary<string, string> shortcuts;
         private string gamePath;
         private bool notification;
-        private int filterOpacity;
+        private bool enableFilterOpacity;
+        private int filterOpacityValue;
 
         public Dictionary<string, string> Shortcuts { get => shortcuts; }
         public string GamePath { get => gamePath; set => gamePath = value; }
         public bool Notification { get => notification; set => notification = value; }
-        public int FilterOpacity { get => filterOpacity; set => filterOpacity = value; }
+        public bool EnableFilterOpacity { get => enableFilterOpacity; set => enableFilterOpacity = value; }
+        public int FilterOpacityValue { get => filterOpacityValue; set => filterOpacityValue = value; }
 
         public ConfigurableOptions()
         {
@@ -26,7 +28,7 @@ namespace YGGDrafus
             shortcuts = DefaultShorcuts();
             gamePath = "";
             notification = true;
-            filterOpacity = 0;
+            filterOpacityValue = 0;
         }
 
         //Deserialization constructor
@@ -37,7 +39,8 @@ namespace YGGDrafus
                 shortcuts = (Dictionary<string, string>)info.GetValue("shortcuts", typeof(Dictionary<string, string>));
                 gamePath = info.GetString("gamePath");
                 notification = (bool)info.GetValue("notification", typeof(bool));
-                filterOpacity = (int)info.GetValue("filterOpacity", typeof(int));
+                enableFilterOpacity = (bool)info.GetValue("enableFilterOpacity", typeof(bool));
+                filterOpacityValue = (int)info.GetValue("filterOpacityValue", typeof(int));
             }
         }
 
@@ -48,7 +51,8 @@ namespace YGGDrafus
                 info.AddValue("shortcuts", shortcuts);
                 info.AddValue("gamePath", gamePath);
                 info.AddValue("notification", notification);
-                info.AddValue("filterOpacity", filterOpacity);
+                info.AddValue("enableFilterOpacity", enableFilterOpacity);
+                info.AddValue("filterOpacityValue", filterOpacityValue);
             }
         }
 

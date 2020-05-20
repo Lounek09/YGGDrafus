@@ -243,11 +243,11 @@ namespace YGGDrafus
             }
         }
 
-        public void SetGamesFilterOpacity(int value)
+        public void SetGamesFilterOpacity(int value, bool enable)
         {
             foreach(GameForm gameForm in children)
             {
-                gameForm.SetGameFilterOpacity(value);
+                gameForm.SetGameFilterOpacity(value, enable);
             }
         }
     }

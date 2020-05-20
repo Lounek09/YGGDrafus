@@ -30,8 +30,9 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
-            this.filterOpacityNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.filterOpacityLabel = new System.Windows.Forms.Label();
+            this.enableFilterOpacityLabel = new System.Windows.Forms.Label();
+            this.filterOpacityValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.filterOpacityValueLabel = new System.Windows.Forms.Label();
             this.screenshotFolderButton = new System.Windows.Forms.Button();
             this.screenshotFolderLabel = new System.Windows.Forms.Label();
             this.notificationCheckBox = new System.Windows.Forms.CheckBox();
@@ -55,9 +56,10 @@
             this.newLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.enableFilterOpacityCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filterOpacityNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterOpacityValueNumericUpDown)).BeginInit();
             this.shortcutTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,8 +80,10 @@
             // generalTabPage
             // 
             this.generalTabPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.generalTabPage.Controls.Add(this.filterOpacityNumericUpDown);
-            this.generalTabPage.Controls.Add(this.filterOpacityLabel);
+            this.generalTabPage.Controls.Add(this.enableFilterOpacityCheckBox);
+            this.generalTabPage.Controls.Add(this.enableFilterOpacityLabel);
+            this.generalTabPage.Controls.Add(this.filterOpacityValueNumericUpDown);
+            this.generalTabPage.Controls.Add(this.filterOpacityValueLabel);
             this.generalTabPage.Controls.Add(this.screenshotFolderButton);
             this.generalTabPage.Controls.Add(this.screenshotFolderLabel);
             this.generalTabPage.Controls.Add(this.notificationCheckBox);
@@ -94,43 +98,54 @@
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "Général";
             // 
-            // filterOpacityNumericUpDown
+            // enableFilterOpacityLabel
             // 
-            this.filterOpacityNumericUpDown.Location = new System.Drawing.Point(114, 109);
-            this.filterOpacityNumericUpDown.Name = "filterOpacityNumericUpDown";
-            this.filterOpacityNumericUpDown.Size = new System.Drawing.Size(44, 20);
-            this.filterOpacityNumericUpDown.TabIndex = 8;
-            this.filterOpacityNumericUpDown.ValueChanged += new System.EventHandler(this.FilterOpacityNumericUpDown_ValueChanged);
+            this.enableFilterOpacityLabel.AutoSize = true;
+            this.enableFilterOpacityLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableFilterOpacityLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.enableFilterOpacityLabel.Location = new System.Drawing.Point(10, 110);
+            this.enableFilterOpacityLabel.Name = "enableFilterOpacityLabel";
+            this.enableFilterOpacityLabel.Size = new System.Drawing.Size(89, 15);
+            this.enableFilterOpacityLabel.TabIndex = 9;
+            this.enableFilterOpacityLabel.Text = "Activer le filtre :";
             // 
-            // filterOpacityLabel
+            // filterOpacityValueNumericUpDown
             // 
-            this.filterOpacityLabel.AutoSize = true;
-            this.filterOpacityLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterOpacityLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.filterOpacityLabel.Location = new System.Drawing.Point(10, 110);
-            this.filterOpacityLabel.Name = "filterOpacityLabel";
-            this.filterOpacityLabel.Size = new System.Drawing.Size(98, 15);
-            this.filterOpacityLabel.TabIndex = 7;
-            this.filterOpacityLabel.Text = "Opacité du filtre :";
+            this.filterOpacityValueNumericUpDown.Location = new System.Drawing.Point(142, 138);
+            this.filterOpacityValueNumericUpDown.Name = "filterOpacityValueNumericUpDown";
+            this.filterOpacityValueNumericUpDown.Size = new System.Drawing.Size(44, 20);
+            this.filterOpacityValueNumericUpDown.TabIndex = 8;
+            this.filterOpacityValueNumericUpDown.ValueChanged += new System.EventHandler(this.FilterOpacityValueNumericUpDown_ValueChanged);
+            // 
+            // filterOpacityValueLabel
+            // 
+            this.filterOpacityValueLabel.AutoSize = true;
+            this.filterOpacityValueLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterOpacityValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.filterOpacityValueLabel.Location = new System.Drawing.Point(30, 139);
+            this.filterOpacityValueLabel.Name = "filterOpacityValueLabel";
+            this.filterOpacityValueLabel.Size = new System.Drawing.Size(106, 15);
+            this.filterOpacityValueLabel.TabIndex = 7;
+            this.filterOpacityValueLabel.Text = "- Opacité du filtre :";
             // 
             // screenshotFolderButton
             // 
             this.screenshotFolderButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.screenshotFolderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.screenshotFolderButton.Location = new System.Drawing.Point(198, 137);
+            this.screenshotFolderButton.Location = new System.Drawing.Point(198, 166);
             this.screenshotFolderButton.Name = "screenshotFolderButton";
             this.screenshotFolderButton.Size = new System.Drawing.Size(46, 23);
             this.screenshotFolderButton.TabIndex = 6;
             this.screenshotFolderButton.Text = "ouvrir";
             this.screenshotFolderButton.UseVisualStyleBackColor = true;
-            this.screenshotFolderButton.Click += new System.EventHandler(this.screenshotFolderButton_Click);
+            this.screenshotFolderButton.Click += new System.EventHandler(this.ScreenshotFolderButton_Click);
             // 
             // screenshotFolderLabel
             // 
             this.screenshotFolderLabel.AutoSize = true;
             this.screenshotFolderLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.screenshotFolderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.screenshotFolderLabel.Location = new System.Drawing.Point(10, 140);
+            this.screenshotFolderLabel.Location = new System.Drawing.Point(10, 169);
             this.screenshotFolderLabel.Name = "screenshotFolderLabel";
             this.screenshotFolderLabel.Size = new System.Drawing.Size(184, 15);
             this.screenshotFolderLabel.TabIndex = 5;
@@ -383,6 +398,16 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // enableFilterOpacityCheckBox
+            // 
+            this.enableFilterOpacityCheckBox.AutoSize = true;
+            this.enableFilterOpacityCheckBox.Location = new System.Drawing.Point(105, 111);
+            this.enableFilterOpacityCheckBox.Name = "enableFilterOpacityCheckBox";
+            this.enableFilterOpacityCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.enableFilterOpacityCheckBox.TabIndex = 10;
+            this.enableFilterOpacityCheckBox.UseVisualStyleBackColor = true;
+            this.enableFilterOpacityCheckBox.CheckedChanged += new System.EventHandler(this.EnableFilterOpacityCheckBox_CheckedChanged);
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.saveButton;
@@ -409,7 +434,7 @@
             this.tabControl.ResumeLayout(false);
             this.generalTabPage.ResumeLayout(false);
             this.generalTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filterOpacityNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterOpacityValueNumericUpDown)).EndInit();
             this.shortcutTabPage.ResumeLayout(false);
             this.shortcutTabPage.PerformLayout();
             this.ResumeLayout(false);
@@ -443,7 +468,9 @@
         private System.Windows.Forms.Label screenshotLabel;
         private System.Windows.Forms.Button screenshotFolderButton;
         private System.Windows.Forms.Label screenshotFolderLabel;
-        private System.Windows.Forms.NumericUpDown filterOpacityNumericUpDown;
-        private System.Windows.Forms.Label filterOpacityLabel;
+        private System.Windows.Forms.NumericUpDown filterOpacityValueNumericUpDown;
+        private System.Windows.Forms.Label filterOpacityValueLabel;
+        private System.Windows.Forms.Label enableFilterOpacityLabel;
+        private System.Windows.Forms.CheckBox enableFilterOpacityCheckBox;
     }
 }

@@ -6,5 +6,5 @@ dotnet_diagnostic.CA1031.severity = none
 # CA1801: Le paramètre context de la méthode .ctor n'est jamais utilisé. Supprimez le paramètre ou utilisez-le dans le corps de la méthode.
 dotnet_diagnostic.CA1801.severity = none
 
-# CA1303: Ne pas passer de littéraux en paramètres localisés
-dotnet_diagnostic.CA1303.severity = none
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = none
