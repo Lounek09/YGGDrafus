@@ -86,7 +86,6 @@ namespace YGGDrafus
             this.buttonClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Image = global::YGGDrafus.Properties.Resources.close;
             this.buttonClose.Location = new System.Drawing.Point(26, 2);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";

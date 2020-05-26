@@ -1,6 +1,7 @@
 ﻿using AxShockwaveFlashObjects;
 using System;
 using System.Collections;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace YGGDrafus
         {
             InitGame();
             InitText();
+            InitImage();
         }
 
         private void InitGame()
@@ -40,6 +42,12 @@ namespace YGGDrafus
         private void InitText()
         {
             indexLabel.Text = (GetIndex() + 1).ToString();
+        }
+
+        private void InitImage()
+        {
+            buttonClose.Image = Image.FromFile(Constant.Instance.IMG_PATH + "close.png");
+            pictureBoxLogo.ImageLocation = Constant.Instance.IMG_PATH + "login.png";
         }
 
         #endregion
@@ -146,14 +154,14 @@ namespace YGGDrafus
             if (message.Length > 100)
                 message = message.Substring(0, 100) + "...";
 
-            ((MainForm)MdiParent).MakeNotification((String)((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()], message, Constant.IMG_PATH + "YGGDrafus-game.png");
+            ((MainForm)MdiParent).MakeNotification((String)((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()], message, Constant.Instance.IMG_PATH + "YGGDrafus-game.png");
 
         }
 
         private void SetLoginDiscordActivity()
         {
 
-            pictureBoxLogo.ImageLocation = Constant.IMG_PATH + "login.png";
+            pictureBoxLogo.ImageLocation = Constant.Instance.IMG_PATH + "login.png";
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - Connexion";
         }
 
@@ -162,80 +170,80 @@ namespace YGGDrafus
             string playerPseudo = (string)args[2];
             int classId = Convert.ToInt16(args[5], NumberFormatInfo.InvariantInfo);
             int sexeId = Convert.ToByte(args[6], NumberFormatInfo.InvariantInfo);
-            string logo = Constant.IMG_PATH + "login.png";
+            string logo = Constant.Instance.IMG_PATH + "login.png";
             switch(classId)
             {
                 case 1: //Feca
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "fecaF.png";
+                        logo = Constant.Instance.IMG_PATH + "fecaF.png";
                     else
-                        logo = Constant.IMG_PATH + "fecaM.png";
+                        logo = Constant.Instance.IMG_PATH + "fecaM.png";
                     break;
                 case 2: //Osamodas
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "osaF.png";
+                        logo = Constant.Instance.IMG_PATH + "osaF.png";
                     else
-                        logo = Constant.IMG_PATH + "osaM.png";
+                        logo = Constant.Instance.IMG_PATH + "osaM.png";
                     break;
                 case 3: //Enutrof
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "enuF.png";
+                        logo = Constant.Instance.IMG_PATH + "enuF.png";
                     else
-                        logo = Constant.IMG_PATH + "enuM.png";
+                        logo = Constant.Instance.IMG_PATH + "enuM.png";
                     break;
                 case 4: //Sram
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "sramF.png";
+                        logo = Constant.Instance.IMG_PATH + "sramF.png";
                     else
-                        logo = Constant.IMG_PATH + "sramM.png";
+                        logo = Constant.Instance.IMG_PATH + "sramM.png";
                     break;
                 case 5: //Xelor
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "xelF.png";
+                        logo = Constant.Instance.IMG_PATH + "xelF.png";
                     else
-                        logo = Constant.IMG_PATH + "xelM.png";
+                        logo = Constant.Instance.IMG_PATH + "xelM.png";
                     break;
                 case 6: //Ecaflip
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "ecaF.png";
+                        logo = Constant.Instance.IMG_PATH + "ecaF.png";
                     else
-                        logo = Constant.IMG_PATH + "ecaM.png";
+                        logo = Constant.Instance.IMG_PATH + "ecaM.png";
                     break;
                 case 7: //Eniripsa
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "eniF.png";
+                        logo = Constant.Instance.IMG_PATH + "eniF.png";
                     else
-                        logo = Constant.IMG_PATH + "eniM.png";
+                        logo = Constant.Instance.IMG_PATH + "eniM.png";
                     break;
                 case 8: //Iop
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "iopF.png";
+                        logo = Constant.Instance.IMG_PATH + "iopF.png";
                     else
-                        logo = Constant.IMG_PATH + "iopM.png";
+                        logo = Constant.Instance.IMG_PATH + "iopM.png";
                     break;
                 case 9: //Cra
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "craF.png";
+                        logo = Constant.Instance.IMG_PATH + "craF.png";
                     else
-                        logo = Constant.IMG_PATH + "craM.png";
+                        logo = Constant.Instance.IMG_PATH + "craM.png";
                     break;
                 case 10: //Sadida
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "sadiF.png";
+                        logo = Constant.Instance.IMG_PATH + "sadiF.png";
                     else
-                        logo = Constant.IMG_PATH + "sadiM.png";
+                        logo = Constant.Instance.IMG_PATH + "sadiM.png";
                     break;
                 case 11: //Sacrieur
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "sacriF.png";
+                        logo = Constant.Instance.IMG_PATH + "sacriF.png";
                     else
-                        logo = Constant.IMG_PATH + "sacriM.png";
+                        logo = Constant.Instance.IMG_PATH + "sacriM.png";
                     break;
                 case 12: //Pandawa
                     if (sexeId == 1)
-                        logo = Constant.IMG_PATH + "pandaF.png";
+                        logo = Constant.Instance.IMG_PATH + "pandaF.png";
                     else
-                        logo = Constant.IMG_PATH + "pandaM.png";
+                        logo = Constant.Instance.IMG_PATH + "pandaM.png";
                     break;
             }
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - " + playerPseudo;
@@ -288,7 +296,7 @@ namespace YGGDrafus
         public void SetGameFilterOpacity(int value, bool enable)
         {
             if (enable)
-                gameAxShockwaveFlash.LoadMovie(1, Path.GetFullPath(Constant.SWF_PATH + "filter.swf") + "?opacity=" + value);
+                gameAxShockwaveFlash.LoadMovie(1, Path.GetFullPath(Constant.Instance.SWF_PATH + "filter.swf") + "?opacity=" + value);
             else
                 gameAxShockwaveFlash.LoadMovie(1, "");
         }

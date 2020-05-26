@@ -1,17 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace YGGDrafus
 {
-    static class Constant
+    public sealed class Constant
     {
-        public const string IMG_PATH = @"img\";
-        public const string SCREENSHOT_PATH = @"screenshot\";
-        public const string SWF_PATH = @"swf\";
-        public const string MAIN_ICO_FILE = "YGGDrafus.ico";
-        public const string OPTION_ICO_FILE = "YGGDrafus-option.ico";
+        private static volatile Constant instance;
+        private static readonly object syncRoot = new Object();
+
+        public string IMG_PATH { get => @"img\"; }
+        public string SCREENSHOT_PATH { get => @"screenshot\"; }
+        public string SWF_PATH { get => @"swf\"; }
+        public string MAIN_ICO_FILE { get => "YGGDrafus.ico"; }
+        public string OPTION_ICO_FILE { get => "YGGDrafus-option.ico"; }
+
+        private Constant() { }
+
+        public static Constant Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                            instance = new Constant();
+                    }
+                }
+                return instance;
+            }
+        }
     }
 }

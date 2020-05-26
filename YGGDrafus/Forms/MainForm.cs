@@ -27,7 +27,7 @@ namespace YGGDrafus
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Icon = new Icon(Constant.MAIN_ICO_FILE);
+            Icon = new Icon(Constant.Instance.MAIN_ICO_FILE);
             InitConfigurableOptions();
         }
 
@@ -191,10 +191,10 @@ namespace YGGDrafus
                 {
                     using (Graphics graphics = Graphics.FromImage(bitmap))
                         graphics.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size, CopyPixelOperation.SourceCopy);
-                    bitmap.Save(Constant.SCREENSHOT_PATH + "dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png);
+                    bitmap.Save(Constant.Instance.SCREENSHOT_PATH + "dofus-" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".png", ImageFormat.Png);
                 }
 
-                MakeNotification("YGGDrafus", "Vous avez pris un screenshot !", Constant.IMG_PATH + "YGGDrafus-screenshot.png");
+                MakeNotification("YGGDrafus", "Vous avez pris un screenshot !", Constant.Instance.IMG_PATH + "YGGDrafus-screenshot.png");
             }
         }
 

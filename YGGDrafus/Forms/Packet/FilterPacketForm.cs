@@ -19,7 +19,7 @@ namespace YGGDrafus.Packet
 
         private void FilterPacketForm_Load(object sender, EventArgs e)
         {
-            Icon = new Icon(Constant.OPTION_ICO_FILE);
+            Icon = new Icon(Constant.Instance.OPTION_ICO_FILE);
 
             includeTextBox.Lines = ((PacketForm)Owner).FilterInclude.ToArray();
             notIncludeTextBox.Lines = ((PacketForm)Owner).FilterNotInclude.ToArray();

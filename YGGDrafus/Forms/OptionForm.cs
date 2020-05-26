@@ -20,7 +20,7 @@ namespace YGGDrafus
 
         private void OptionForm_Load(object sender, EventArgs e)
         {
-            Icon = new Icon(Constant.OPTION_ICO_FILE);
+            Icon = new Icon(Constant.Instance.OPTION_ICO_FILE);
 
             configurableOptions = ((MainForm)Owner).ConfigurableOptions;
 
@@ -113,7 +113,7 @@ namespace YGGDrafus
         {
             Process.Start(new ProcessStartInfo()
             {
-                FileName = Path.GetFullPath(Constant.SCREENSHOT_PATH),
+                FileName = Path.GetFullPath(Constant.Instance.SCREENSHOT_PATH),
                 UseShellExecute = true,
                 Verb = "open"
             });

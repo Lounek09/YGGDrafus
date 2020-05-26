@@ -25,7 +25,7 @@ namespace YGGDrafus
 
         private void PacketForm_Load(object sender, EventArgs e)
         {
-            Icon = new Icon(Constant.MAIN_ICO_FILE);
+            Icon = new Icon(Constant.Instance.MAIN_ICO_FILE);
         }
 
         private void PacketForm_FormClosed(object sender, FormClosedEventArgs e)
