@@ -22,3 +22,4 @@ C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csproj.
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.exe
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.pdb
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csprojAssemblyReference.cache
+C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.EncyclopediaForm.resources

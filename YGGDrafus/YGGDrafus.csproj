@@ -93,6 +93,12 @@
     <Compile Include="Class\Constant.cs" />
     <Compile Include="Class\ExecuteCmd.cs" />
     <Compile Include="Class\ExtendedKeyEventArgs.cs" />
+    <Compile Include="Forms\EncyclopediaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EncyclopediaForm.Designer.cs">
+      <DependentUpon>EncyclopediaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PacketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\EncyclopediaForm.resx">
+      <DependentUpon>EncyclopediaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>

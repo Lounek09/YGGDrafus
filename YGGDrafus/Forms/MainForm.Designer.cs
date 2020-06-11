@@ -35,6 +35,7 @@
             this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encyclopediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             this.upToolStripMenuItem,
             this.downToolStripMenuItem,
             this.optionToolStripMenuItem,
+            this.encyclopediaToolStripMenuItem,
             this.packetToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
@@ -107,6 +109,13 @@
             this.optionToolStripMenuItem.Text = "Option";
             this.optionToolStripMenuItem.Click += new System.EventHandler(this.OptionToolStripMenuItem_Click);
             // 
+            // encyclopediaToolStripMenuItem
+            // 
+            this.encyclopediaToolStripMenuItem.Name = "encyclopediaToolStripMenuItem";
+            this.encyclopediaToolStripMenuItem.Size = new System.Drawing.Size(96, 25);
+            this.encyclopediaToolStripMenuItem.Text = "Encyclopédie";
+            this.encyclopediaToolStripMenuItem.Click += new System.EventHandler(this.EncyclopediaToolStripMenuItem_Click);
+            // 
             // packetToolStripMenuItem
             // 
             this.packetToolStripMenuItem.Name = "packetToolStripMenuItem";
@@ -144,10 +153,12 @@
         private System.Windows.Forms.ToolStripMenuItem downToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem packetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem encyclopediaToolStripMenuItem;
 
         public System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem { get => newToolStripMenuItem; }
         public System.Windows.Forms.ToolStripComboBox GameListToolStripComboBox { get => gameListToolStripComboBox; }
         public System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem { get => optionToolStripMenuItem; }
         public System.Windows.Forms.ToolStripMenuItem PacketToolStripMenuItem { get => packetToolStripMenuItem; }
+        public System.Windows.Forms.ToolStripMenuItem EncyclopediaToolStripMenuItem { get => encyclopediaToolStripMenuItem; }
     }
 }

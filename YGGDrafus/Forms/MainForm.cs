@@ -133,6 +133,16 @@ namespace YGGDrafus
             packetToolStripMenuItem.Enabled = false; 
         }
 
+        private void EncyclopediaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string itemsPath = configurableOptions.GamePath + @"\resources\app\retroclient\clips\items\";
+
+            EncyclopediaForm encyclopediaForm = new EncyclopediaForm(itemsPath) { Owner = this };
+            encyclopediaForm.Show();
+
+            encyclopediaToolStripMenuItem.Enabled = false;
+        }
+
         #endregion
 
         #region Shortcuts
