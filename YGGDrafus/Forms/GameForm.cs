@@ -54,30 +54,10 @@ namespace YGGDrafus
 
         #region Flash Communication
 
-        private static XmlDocument ReadFlashCall(string request)
-        {
-            XmlDocument document = new XmlDocument() { XmlResolver = null };
-            StringReader stringReader = new StringReader(request);
-            XmlReader xmlReader = null;
-            try
-            {
-                xmlReader = XmlReader.Create(input: stringReader, settings: new XmlReaderSettings() { XmlResolver = null });
-                document.Load(xmlReader);
-            }
-            finally
-            {
-                if (xmlReader != null)
-                    xmlReader.Close();
-                else
-                    document = null;
-            }
-            return document;
-        }
-
         private void GameAxShockwaveFlash_FlashCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e)
         {
 
-            XmlDocument document = ReadFlashCall(e.request);
+            XmlDocument document = Xml.ReadXmlFromString(e.request);
 
             if (document != null)
             {
@@ -163,6 +143,12 @@ namespace YGGDrafus
 
             pictureBoxLogo.ImageLocation = Constant.Instance.IMG_PATH + "login.png";
             ((MainForm)MdiParent).GameListToolStripComboBox.Items[GetIndex()] = (GetIndex() + 1) + " - Connexion";
+
+            ((MainForm)MdiParent).SetDebugRequestsInConfig(false);
+
+            if (((MainForm)MdiParent).Children.Count < Constant.Instance.MAX_GAME_INSTANCE)
+                ((MainForm)MdiParent).NewToolStripMenuItem.Enabled = true;
+
         }
 
         private void SetIngameDiscordActivity(ArrayList args)
@@ -278,7 +264,7 @@ namespace YGGDrafus
             cb.Items.RemoveAt(index);
             ((MainForm)MdiParent).Children.RemoveAt(index);
 
-            if (cb.Items.Count < 8)
+            if (cb.Items.Count < Constant.Instance.MAX_GAME_INSTANCE)
                 ((MainForm)MdiParent).NewToolStripMenuItem.Enabled = true;
 
             if (index < cb.Items.Count)

@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Xml;
 
 namespace YGGDrafus
 {
@@ -135,7 +136,7 @@ namespace YGGDrafus
 
         private void EncyclopediaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string itemsPath = configurableOptions.GamePath + @"\resources\app\retroclient\clips\items\";
+            string itemsPath = configurableOptions.GamePath + Constant.Instance.ITEMS_IN_GAME_PATH;
 
             EncyclopediaForm encyclopediaForm = new EncyclopediaForm(itemsPath) { Owner = this };
             encyclopediaForm.Show();
@@ -212,11 +213,15 @@ namespace YGGDrafus
 
         private void AddNewGame()
         {
-            if (children.Count < 8)
+            if (children.Count < Constant.Instance.MAX_GAME_INSTANCE)
             {
-                string loaderPath = configurableOptions.GamePath + @"\resources\app\retroclient\preloader.swf";
+                string loaderPath = configurableOptions.GamePath + Constant.Instance.PRELOADER_IN_GAME_PATH;
                 if (File.Exists(loaderPath))
                 {
+                    newToolStripMenuItem.Enabled = false;
+
+                    SetDebugRequestsInConfig(true);
+
                     children.Add(new GameForm(loaderPath + "?electron=true")
                     {
                         MdiParent = this,
@@ -226,13 +231,35 @@ namespace YGGDrafus
 
                     gameListToolStripComboBox.Items.Add((gameListToolStripComboBox.Items.Count + 1) + " - Chargement");
                     gameListToolStripComboBox.SelectedIndex = gameListToolStripComboBox.Items.Count - 1;
-
-                    if (children.Count > 7)
-                        newToolStripMenuItem.Enabled = false;
                 }
                 else
-                {
                     MessageBox.Show("Impossible de lancer le jeu, le fichier preloader.swf est introuvable", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void SetDebugRequestsInConfig(bool add)
+        {
+            string configPath = configurableOptions.GamePath + Constant.Instance.CONFIG_IN_GAME_PATH;
+
+            XmlDocument config = Xml.ReadXmlFromFile(configPath);
+
+            if (config != null)
+            {
+                XmlNode nodeConf = config.DocumentElement.SelectSingleNode("/config/conf");
+
+                if(nodeConf != null)
+                { 
+                    if (add)
+                    {
+                        XmlAttribute debugRequests = config.CreateAttribute("debugrequests");
+                        debugRequests.Value = "2";
+
+                        nodeConf.Attributes.Append(debugRequests);
+                    }
+                    else
+                        nodeConf.Attributes.RemoveNamedItem("debugrequests");
+
+                    config.Save(configPath);
                 }
             }
         }

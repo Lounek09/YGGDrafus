@@ -1,0 +1,572 @@
+[
+  {
+    "id": "1",
+    "name": "Amulette",
+    "type": "Equipement"
+  },
+  {
+    "id": "2",
+    "name": "Arc",
+    "type": "Equipement"
+  },
+  {
+    "id": "3",
+    "name": "Baguette",
+    "type": "Equipement"
+  },
+  {
+    "id": "4",
+    "name": "Bâton",
+    "type": "Equipement"
+  },
+  {
+    "id": "5",
+    "name": "Dague",
+    "type": "Equipement"
+  },
+  {
+    "id": "6",
+    "name": "Épée",
+    "type": "Equipement"
+  },
+  {
+    "id": "7",
+    "name": "Marteau",
+    "type": "Equipement"
+  },
+  {
+    "id": "8",
+    "name": "Pelle",
+    "type": "Equipement"
+  },
+  {
+    "id": "9",
+    "name": "Anneau",
+    "type": "Equipement"
+  },
+  {
+    "id": "10",
+    "name": "Ceinture",
+    "type": "Equipement"
+  },
+  {
+    "id": "11",
+    "name": "Botte",
+    "type": "Equipement"
+  },
+  {
+    "id": "12",
+    "name": "Potion",
+    "type": "Consommable"
+  },
+  {
+    "id": "13",
+    "name": "Parchemin d'expérience",
+    "type": "Consommable"
+  },
+  {
+    "id": "14",
+    "name": "Objet de dons",
+    "type": "Consommable"
+  },
+  {
+    "id": "15",
+    "name": "Ressource",
+    "type": "Ressource"
+  },
+  {
+    "id": "16",
+    "name": "Chapeau",
+    "type": "Equipement"
+  },
+  {
+    "id": "17",
+    "name": "Cape",
+    "type": "Equipement"
+  },
+  {
+    "id": "18",
+    "name": "Familier",
+    "type": "Equipement"
+  },
+  {
+    "id": "19",
+    "name": "Hache",
+    "type": "Equipement"
+  },
+  {
+    "id": "20",
+    "name": "Outil",
+    "type": "Equipement"
+  },
+  {
+    "id": "21",
+    "name": "Pioche",
+    "type": "Equipement"
+  },
+  {
+    "id": "22",
+    "name": "Faux",
+    "type": "Equipement"
+  },
+  {
+    "id": "23",
+    "name": "Dofus",
+    "type": "Equipement"
+  },
+  {
+    "id": "24",
+    "name": "Objet de Quête",
+    "type": "Autre"
+  },
+  {
+    "id": "25",
+    "name": "Document",
+    "type": "Consommable"
+  },
+  {
+    "id": "26",
+    "name": "Potion de forgemagie",
+    "type": "Ressource"
+  },
+  {
+    "id": "27",
+    "name": "Objet de Mutation",
+    "type": "Autre"
+  },
+  {
+    "id": "28",
+    "name": "Nourriture boost",
+    "type": "Autre"
+  },
+  {
+    "id": "29",
+    "name": "Bénédiction",
+    "type": "Autre"
+  },
+  {
+    "id": "30",
+    "name": "Malédiction",
+    "type": "Autre"
+  },
+  {
+    "id": "31",
+    "name": "Roleplay Buffs",
+    "type": "Autre"
+  },
+  {
+    "id": "32",
+    "name": "Personnage suiveur",
+    "type": "Autre"
+  },
+  {
+    "id": "33",
+    "name": "Pain",
+    "type": "Consommable"
+  },
+  {
+    "id": "34",
+    "name": "Céréale",
+    "type": "Ressource"
+  },
+  {
+    "id": "35",
+    "name": "Fleur",
+    "type": "Ressource"
+  },
+  {
+    "id": "36",
+    "name": "Plante",
+    "type": "Ressource"
+  },
+  {
+    "id": "37",
+    "name": "Bière",
+    "type": "Consommable"
+  },
+  {
+    "id": "38",
+    "name": "Bois",
+    "type": "Ressource"
+  },
+  {
+    "id": "39",
+    "name": "Minerai",
+    "type": "Ressource"
+  },
+  {
+    "id": "40",
+    "name": "Alliage",
+    "type": "Ressource"
+  },
+  {
+    "id": "41",
+    "name": "Poisson",
+    "type": "Ressource"
+  },
+  {
+    "id": "42",
+    "name": "Friandise",
+    "type": "Consommable"
+  },
+  {
+    "id": "43",
+    "name": "Potion d'oubli de sort",
+    "type": "Consommable"
+  },
+  {
+    "id": "44",
+    "name": "Potion d'oubli de métier",
+    "type": "Consommable"
+  },
+  {
+    "id": "45",
+    "name": "Potion d'oubli de maitrise",
+    "type": "Consommable"
+  },
+  {
+    "id": "46",
+    "name": "Fruit",
+    "type": "Ressource"
+  },
+  {
+    "id": "47",
+    "name": "Os",
+    "type": "Ressource"
+  },
+  {
+    "id": "48",
+    "name": "Poudre",
+    "type": "Ressource"
+  },
+  {
+    "id": "49",
+    "name": "Poisson comestible",
+    "type": "Ressource"
+  },
+  {
+    "id": "50",
+    "name": "Pierre précieuse",
+    "type": "Ressource"
+  },
+  {
+    "id": "51",
+    "name": "Pierre brute",
+    "type": "Ressource"
+  },
+  {
+    "id": "52",
+    "name": "Farine",
+    "type": "Ressource"
+  },
+  {
+    "id": "53",
+    "name": "Plume",
+    "type": "Ressource"
+  },
+  {
+    "id": "54",
+    "name": "Poil",
+    "type": "Ressource"
+  },
+  {
+    "id": "55",
+    "name": "Etoffe",
+    "type": "Ressource"
+  },
+  {
+    "id": "56",
+    "name": "Cuir",
+    "type": "Ressource"
+  },
+  {
+    "id": "57",
+    "name": "Laine",
+    "type": "Ressource"
+  },
+  {
+    "id": "58",
+    "name": "Graine",
+    "type": "Ressource"
+  },
+  {
+    "id": "59",
+    "name": "Peau",
+    "type": "Ressource"
+  },
+  {
+    "id": "60",
+    "name": "Huile",
+    "type": "Ressource"
+  },
+  {
+    "id": "61",
+    "name": "Peluche",
+    "type": "Ressource"
+  },
+  {
+    "id": "62",
+    "name": "Poisson vidé",
+    "type": "Ressource"
+  },
+  {
+    "id": "63",
+    "name": "Viande",
+    "type": "Ressource"
+  },
+  {
+    "id": "64",
+    "name": "Viande conservée",
+    "type": "Ressource"
+  },
+  {
+    "id": "65",
+    "name": "Queue",
+    "type": "Ressource"
+  },
+  {
+    "id": "66",
+    "name": "Metaria",
+    "type": "Ressource"
+  },
+  {
+    "id": "68",
+    "name": "Légume",
+    "type": "Ressource"
+  },
+  {
+    "id": "69",
+    "name": "Viande comestible",
+    "type": "Ressource"
+  },
+  {
+    "id": "70",
+    "name": "Teinture",
+    "type": "Ressource"
+  },
+  {
+    "id": "71",
+    "name": "Matériel d'alchimie",
+    "type": "Ressource"
+  },
+  {
+    "id": "72",
+    "name": "Oeuf de familier",
+    "type": "Consommable"
+  },
+  {
+    "id": "73",
+    "name": "Maîtrise",
+    "type": "Consommable"
+  },
+  {
+    "id": "74",
+    "name": "Fée d'artifice",
+    "type": "Consommable"
+  },
+  {
+    "id": "75",
+    "name": "Parchemin de sort",
+    "type": "Consommable"
+  },
+  {
+    "id": "76",
+    "name": "Parchemin de caractéristique",
+    "type": "Consommable"
+  },
+  {
+    "id": "77",
+    "name": "Certificat de mise en chanil",
+    "type": "Autre"
+  },
+  {
+    "id": "78",
+    "name": "Rune de forgemagie",
+    "type": "Ressource"
+  },
+  {
+    "id": "79",
+    "name": "Boisson",
+    "type": "Ressource"
+  },
+  {
+    "id": "80",
+    "name": "Objet de mission",
+    "type": "Autre"
+  },
+  {
+    "id": "81",
+    "name": "Sac à dos",
+    "type": "Equipement"
+  },
+  {
+    "id": "82",
+    "name": "Bouclier",
+    "type": "Equipement"
+  },
+  {
+    "id": "83",
+    "name": "Pierre d'âme",
+    "type": "Equipement"
+  },
+  {
+    "id": "84",
+    "name": "Clefs",
+    "type": "Ressource"
+  },
+  {
+    "id": "85",
+    "name": "Pierre d'âme pleine",
+    "type": "Consommable"
+  },
+  {
+    "id": "86",
+    "name": "Potion d'oubli percepteur",
+    "type": "Consommable"
+  },
+  {
+    "id": "87",
+    "name": "Parchemin de recherche",
+    "type": "Consommable"
+  },
+  {
+    "id": "88",
+    "name": "Pierre magique",
+    "type": "Consommable"
+  },
+  {
+    "id": "89",
+    "name": "Cadeaux",
+    "type": "Consommable"
+  },
+  {
+    "id": "90",
+    "name": "Fantôme de Familier",
+    "type": "Ressource"
+  },
+  {
+    "id": "93",
+    "name": "Objet d'élevage",
+    "type": "Consommable"
+  },
+  {
+    "id": "94",
+    "name": "Objet utilisable",
+    "type": "Autre"
+  },
+  {
+    "id": "95",
+    "name": "Planche",
+    "type": "Ressource"
+  },
+  {
+    "id": "96",
+    "name": "Écorce",
+    "type": "Ressource"
+  },
+  {
+    "id": "97",
+    "name": "Certificat de monture",
+    "type": "Consommable"
+  },
+  {
+    "id": "98",
+    "name": "Racine",
+    "type": "Ressource"
+  },
+  {
+    "id": "99",
+    "name": "Filet de capture",
+    "type": "Equipement"
+  },
+  {
+    "id": "100",
+    "name": "Sac de ressources",
+    "type": "Consommable"
+  },
+  {
+    "id": "103",
+    "name": "Patte",
+    "type": "Ressource"
+  },
+  {
+    "id": "104",
+    "name": "Aile",
+    "type": "Ressource"
+  },
+  {
+    "id": "105",
+    "name": "Oeuf",
+    "type": "Ressource"
+  },
+  {
+    "id": "106",
+    "name": "Oreille",
+    "type": "Ressource"
+  },
+  {
+    "id": "107",
+    "name": "Carapace",
+    "type": "Ressource"
+  },
+  {
+    "id": "108",
+    "name": "Bourgeon",
+    "type": "Ressource"
+  },
+  {
+    "id": "109",
+    "name": "Oeil",
+    "type": "Ressource"
+  },
+  {
+    "id": "110",
+    "name": "Gelée",
+    "type": "Ressource"
+  },
+  {
+    "id": "111",
+    "name": "Coquille",
+    "type": "Ressource"
+  },
+  {
+    "id": "112",
+    "name": "Prisme",
+    "type": "Consommable"
+  },
+  {
+    "id": "113",
+    "name": "Objet vivant",
+    "type": "Equipement"
+  },
+  {
+    "id": "114",
+    "name": "Arme magique",
+    "type": "Equipement"
+  },
+  {
+    "id": "115",
+    "name": "Fragment d'âme de Shushu",
+    "type": "Consommable"
+  },
+  {
+    "id": "116",
+    "name": "Potion de familier",
+    "type": "Consommable"
+  },
+  {
+    "id": "102",
+    "name": "Arbalète",
+    "type": "Equipement"
+  },
+  {
+    "id": "91",
+    "name": "Dragodinde",
+    "type": "Equipement"
+  },
+  {
+    "id": "92",
+    "name": "Bouftou",
+    "type": "Autre"
+  }
+]

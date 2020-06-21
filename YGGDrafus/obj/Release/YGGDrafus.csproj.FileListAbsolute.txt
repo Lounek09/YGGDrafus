@@ -11,6 +11,7 @@ C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\bin\Release\AxInterop.Shockwa
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\Interop.ShockwaveFlashObjects.dll
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\AxInterop.ShockwaveFlashObjects.dll
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csproj.ResolveComReference.cache
+C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.EncyclopediaForm.resources
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.GameForm.resources
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.MainForm.resources
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.OptionForm.resources
@@ -21,5 +22,3 @@ C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csproj.
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csproj.CopyComplete
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.exe
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.pdb
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.csprojAssemblyReference.cache
-C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Release\YGGDrafus.EncyclopediaForm.resources

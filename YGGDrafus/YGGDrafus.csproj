@@ -93,6 +93,7 @@
     <Compile Include="Class\Constant.cs" />
     <Compile Include="Class\ExecuteCmd.cs" />
     <Compile Include="Class\ExtendedKeyEventArgs.cs" />
+    <Compile Include="Class\Xml.cs" />
     <Compile Include="Forms\EncyclopediaForm.cs">
       <SubType>Form</SubType>
     </Compile>

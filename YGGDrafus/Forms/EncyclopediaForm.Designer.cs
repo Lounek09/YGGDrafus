@@ -69,6 +69,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encyclopedie";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EncyclopediaForm_FormClosing);
             this.Load += new System.EventHandler(this.EncyclopediaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash2)).EndInit();
