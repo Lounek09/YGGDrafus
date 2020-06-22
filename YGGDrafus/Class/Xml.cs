@@ -25,12 +25,12 @@ namespace YGGDrafus
             return document;
         }
 
-        public static XmlDocument ReadXmlFromFile(string path)
+        public static XmlDocument ReadXmlFromFile(string filePath)
         {
             XmlDocument document = new XmlDocument() { XmlResolver = null };
 
-            if (File.Exists(path))
-                document.Load(path);
+            if (File.Exists(filePath))
+                document.Load(filePath);
             else
                 document = null;
 

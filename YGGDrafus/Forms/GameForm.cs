@@ -81,7 +81,7 @@ namespace YGGDrafus
                         DebugRequest(args);
                         break;
                     case "makeNotification":
-                        if (((MainForm)MdiParent).ConfigurableOptions.Notification && ActiveForm == null)
+                        if (((MainForm)MdiParent).ConfigurableOptions.EnableNotification && ActiveForm == null)
                             MakeNotification((string)args[0]);
                         break;
                     case "setLoginDiscordActivity":
@@ -101,6 +101,19 @@ namespace YGGDrafus
             string data, playerName, currentServer, arrow, message;
             PacketForm packetForm = null;
 
+            if (String.IsNullOrEmpty(args[0].ToString()))
+                arrow = "<-->";
+            else
+                arrow = (bool)args[0] ? "-->" : "<--";
+            data = String.IsNullOrEmpty(args[2].ToString()) ? null : args[2].ToString();
+            playerName = String.IsNullOrEmpty(args[3].ToString()) ? null : args[3].ToString();
+            currentServer = String.IsNullOrEmpty(args[4].ToString()) ? null : args[4].ToString();
+
+            if (playerName == null)
+                message = arrow + " " + data;
+            else
+                message = "(" + playerName + ", " + currentServer + ") " + arrow + " " + data;
+
             foreach (Form form in ((MainForm)MdiParent).OwnedForms)
             {
                 if (form is PacketForm)
@@ -110,22 +123,10 @@ namespace YGGDrafus
                 }
             }
             if (!(packetForm is null))
-            {
-                if (String.IsNullOrEmpty(args[0].ToString()))
-                    arrow = "<-->";
-                else
-                    arrow = (bool)args[0] ? "-->" : "<--";
-                data = String.IsNullOrEmpty(args[2].ToString()) ? null : args[2].ToString();
-                playerName = String.IsNullOrEmpty(args[3].ToString()) ? null : args[3].ToString();
-                currentServer = String.IsNullOrEmpty(args[4].ToString()) ? null : args[4].ToString();
-            
-                if (playerName == null)
-                    message = arrow + " " + data;
-                else
-                    message = "(" + playerName + ", " + currentServer + ") " + arrow + " " + data;
-
                 packetForm.AddNewPacket(message);
-            }
+
+            if (((MainForm)MdiParent).ConfigurableOptions.EnableLog)
+                Logger.Log(message);
         }
 
         private void MakeNotification(string message)

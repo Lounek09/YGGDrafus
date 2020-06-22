@@ -27,10 +27,11 @@ namespace YGGDrafus
             //Set saved option value
             AddShorcutsValue(configurableOptions.Shortcuts);
             pathTextBox.Text = configurableOptions.GamePath;
-            notificationCheckBox.Checked = configurableOptions.Notification;
+            notificationCheckBox.Checked = configurableOptions.EnableNotification;
             enableFilterOpacityCheckBox.Checked = configurableOptions.EnableFilterOpacity;
             EnableFilterOpacityValue();
             filterOpacityValueNumericUpDown.Value = configurableOptions.FilterOpacityValue;
+            enableLogCheckBox.Checked = configurableOptions.EnableLog;
         }
 
         private void AddShorcutsValue(Dictionary<string, string> shortcuts)
@@ -45,10 +46,11 @@ namespace YGGDrafus
         {
             SaveShorcutsValue();
             configurableOptions.GamePath = pathTextBox.Text;
-            configurableOptions.Notification = notificationCheckBox.Checked;
+            configurableOptions.EnableNotification = notificationCheckBox.Checked;
             configurableOptions.EnableFilterOpacity = enableFilterOpacityCheckBox.Checked;
             EnableFilterOpacityValue();
             configurableOptions.FilterOpacityValue = Convert.ToInt32(filterOpacityValueNumericUpDown.Value);
+            configurableOptions.EnableLog = enableLogCheckBox.Checked;
 
             configurableOptions.Save();
 

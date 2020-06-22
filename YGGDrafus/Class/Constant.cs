@@ -10,6 +10,7 @@ namespace YGGDrafus
         public string IMG_PATH { get => @"img\"; }
         public string SCREENSHOT_PATH { get => @"screenshot\"; }
         public string SWF_PATH { get => @"swf\"; }
+        public string LOG_PATH { get => @"log\"; }
         public string MAIN_ICO_FILE { get => "YGGDrafus.ico"; }
         public string OPTION_ICO_FILE { get => "YGGDrafus-option.ico"; }
         public string PRELOADER_IN_GAME_PATH { get => @"\resources\app\retroclient\preloader.swf"; }

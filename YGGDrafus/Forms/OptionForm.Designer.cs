@@ -30,6 +30,8 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
+            this.enableLogCheckBox = new System.Windows.Forms.CheckBox();
+            this.enableLogLabel = new System.Windows.Forms.Label();
             this.enableFilterOpacityCheckBox = new System.Windows.Forms.CheckBox();
             this.enableFilterOpacityLabel = new System.Windows.Forms.Label();
             this.filterOpacityValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -80,6 +82,8 @@
             // generalTabPage
             // 
             this.generalTabPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.generalTabPage.Controls.Add(this.enableLogCheckBox);
+            this.generalTabPage.Controls.Add(this.enableLogLabel);
             this.generalTabPage.Controls.Add(this.enableFilterOpacityCheckBox);
             this.generalTabPage.Controls.Add(this.enableFilterOpacityLabel);
             this.generalTabPage.Controls.Add(this.filterOpacityValueNumericUpDown);
@@ -97,6 +101,26 @@
             this.generalTabPage.Size = new System.Drawing.Size(378, 394);
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "Général";
+            // 
+            // enableLogCheckBox
+            // 
+            this.enableLogCheckBox.AutoSize = true;
+            this.enableLogCheckBox.Location = new System.Drawing.Point(108, 191);
+            this.enableLogCheckBox.Name = "enableLogCheckBox";
+            this.enableLogCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.enableLogCheckBox.TabIndex = 12;
+            this.enableLogCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // enableLogLabel
+            // 
+            this.enableLogLabel.AutoSize = true;
+            this.enableLogLabel.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableLogLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.enableLogLabel.Location = new System.Drawing.Point(10, 190);
+            this.enableLogLabel.Name = "enableLogLabel";
+            this.enableLogLabel.Size = new System.Drawing.Size(92, 15);
+            this.enableLogLabel.TabIndex = 11;
+            this.enableLogLabel.Text = "Activer les logs :";
             // 
             // enableFilterOpacityCheckBox
             // 
@@ -473,5 +497,7 @@
         private System.Windows.Forms.Label filterOpacityValueLabel;
         private System.Windows.Forms.Label enableFilterOpacityLabel;
         private System.Windows.Forms.CheckBox enableFilterOpacityCheckBox;
+        private System.Windows.Forms.CheckBox enableLogCheckBox;
+        private System.Windows.Forms.Label enableLogLabel;
     }
 }

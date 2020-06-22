@@ -22,3 +22,4 @@ C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.csproj.Ge
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.csproj.CopyComplete
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.exe
 C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.pdb
+C:\Users\samuh\source\repos\YGGDrafusApp\YGGDrafus\obj\Debug\YGGDrafus.csprojAssemblyReference.cache

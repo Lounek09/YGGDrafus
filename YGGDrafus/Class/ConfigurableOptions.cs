@@ -12,23 +12,27 @@ namespace YGGDrafus
     {
         private readonly Dictionary<string, string> shortcuts;
         private string gamePath;
-        private bool notification;
+        private bool enableNotification;
         private bool enableFilterOpacity;
         private int filterOpacityValue;
+        private bool enableLog;
 
         public Dictionary<string, string> Shortcuts { get => shortcuts; }
         public string GamePath { get => gamePath; set => gamePath = value; }
-        public bool Notification { get => notification; set => notification = value; }
+        public bool EnableNotification { get => enableNotification; set => enableNotification = value; }
         public bool EnableFilterOpacity { get => enableFilterOpacity; set => enableFilterOpacity = value; }
         public int FilterOpacityValue { get => filterOpacityValue; set => filterOpacityValue = value; }
+        public bool EnableLog { get => enableLog; set => enableLog = value; }
+
 
         public ConfigurableOptions()
         {
             shortcuts = new Dictionary<string, string>();
             shortcuts = DefaultShorcuts();
             gamePath = "";
-            notification = true;
+            enableNotification = true;
             filterOpacityValue = 0;
+            enableLog = false;
         }
 
         //Deserialization constructor
@@ -38,9 +42,10 @@ namespace YGGDrafus
             {
                 shortcuts = (Dictionary<string, string>)info.GetValue("shortcuts", typeof(Dictionary<string, string>));
                 gamePath = info.GetString("gamePath");
-                notification = (bool)info.GetValue("notification", typeof(bool));
+                enableNotification = (bool)info.GetValue("enableNotification", typeof(bool));
                 enableFilterOpacity = (bool)info.GetValue("enableFilterOpacity", typeof(bool));
                 filterOpacityValue = (int)info.GetValue("filterOpacityValue", typeof(int));
+                enableLog = (bool)info.GetValue("enableLog", typeof(bool));
             }
         }
 
@@ -50,9 +55,10 @@ namespace YGGDrafus
             {
                 info.AddValue("shortcuts", shortcuts);
                 info.AddValue("gamePath", gamePath);
-                info.AddValue("notification", notification);
+                info.AddValue("enableNotification", enableNotification);
                 info.AddValue("enableFilterOpacity", enableFilterOpacity);
                 info.AddValue("filterOpacityValue", filterOpacityValue);
+                info.AddValue("enableLog", enableLog);
             }
         }
 
